@@ -12,6 +12,8 @@ Interesting links to use with Icoon
 
 ### Lots of beautiful screensaver-alike pages:
 [http://www.chromeexperiments.com/](http://www.chromeexperiments.com/)  
+[http://mashable.com/category/data-visualization/](http://mashable.com/category/data-visualization/)  
+[http://d3js.org/](http://d3js.org/)  
 
 See also
 --------
