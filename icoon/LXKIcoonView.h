@@ -18,12 +18,17 @@ typedef enum {
 
 @interface LXKIcoonView : ScreenSaverView {
     @private
+    
+    //
+    // Synthesized Propertiew
+    //
     WebView* _webView;
-    NSWindow* _configSheet;
     NSTimer* _refreshTimer;
     
+    //
+    // POD Fields
+    //
     ScreenSaverDefaults* _defaults;
-    
     NSString* _refreshUrl;
     NSNumber* _refreshInterval;
     NSNumber* _refreshUnits;
@@ -32,7 +37,10 @@ typedef enum {
 @property (nonatomic, retain) IBOutlet WebView* webView;
 @property (nonatomic, retain) IBOutlet NSTimer* refreshTimer;
 
-@property (nonatomic, retain) IBOutlet NSWindow* configSheet;
+//
+// IBOutlets
+//
+@property (weak) IBOutlet NSWindow* configSheet;
 @property (weak) IBOutlet NSTextField *urlField;
 @property (weak) IBOutlet NSTextField *refreshIntervalField;
 @property (weak) IBOutlet NSPopUpButtonCell *refreshUnitsPopUp;

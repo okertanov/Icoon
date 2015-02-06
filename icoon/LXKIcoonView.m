@@ -8,19 +8,44 @@
 
 #import "LXKIcoonView.h"
 
-@implementation LXKIcoonView
-
-@synthesize webView =_webView;
-@synthesize configSheet = _configSheet;
-@synthesize refreshTimer = _refreshTimer;
-
+//
+// Private Constants
+//
 static NSString* const ScreenSaverName = @"me.lexiko.icoon";
 static NSString* const DefaultsURLKey = @"URL";
 static NSString* const DefaultsURL = @"https://www.google.com/";
 static NSString* const DefaultsRefreshIntervalKey = @"RefreshInterval";
-static const double DefaultsRefreshInterval = 1.0;
+static double const DefaultsRefreshInterval = 1.0;
 static NSString* const DefaultsRefreshUnitsKey = @"RefreshUnits";
-static const unsigned long DefaultsRefreshUnits = (unsigned long)RefreshDisabled;
+static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled;
+
+//
+// Private Methods
+//
+@interface LXKIcoonView ()
+- (IBAction) okClick:(id)sender;
+- (IBAction)popUpClick:(id)sender;
+
+- (void) updateRefreshIntervalAvailable;
+
+- (ScreenSaverDefaults*) initializeDefaults;
+- (void)loadDefaults;
+- (void)saveDefaults;
+- (void)notifyChangedDefaults;
+
+- (WebView*)initializeWebView;
+- (void)uninitializeWebView;
+- (void)loadWebView: (NSString*)url;
+- (void)refreshWebView;
+@end
+
+//
+// Implementation
+//
+@implementation LXKIcoonView
+
+@synthesize webView =_webView;
+@synthesize refreshTimer = _refreshTimer;
 
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
     self = [super initWithFrame:frame isPreview:isPreview];
@@ -42,10 +67,12 @@ static const unsigned long DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 - (void)startAnimation {
     [super startAnimation];
     
-    [self loadWebView];
+    [self loadWebView:_refreshUrl];
 }
 
 - (void)stopAnimation {
+    [self loadWebView:@"about:blank"];
+    
     [super stopAnimation];
 }
 
@@ -55,6 +82,12 @@ static const unsigned long DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 
 - (void)animateOneFrame {
     return;
+}
+
+- (BOOL)isAnimating {
+    BOOL animating =  [super isAnimating];
+    
+    return animating;
 }
 
 + (BOOL)performGammaFade {
@@ -82,11 +115,7 @@ static const unsigned long DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 }
 
 - (void)dealloc {
-    [self.webView setFrameLoadDelegate:nil];
-    [self.webView setPolicyDelegate:nil];
-    [self.webView setUIDelegate:nil];
-    [self.webView setEditingDelegate:nil];
-    [self.webView close];
+    [self uninitializeWebView];
 }
 
 - (IBAction) okClick:(id)sender {
@@ -132,7 +161,7 @@ static const unsigned long DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 
 - (void)notifyChangedDefaults {
     [self loadDefaults];
-    [self loadWebView];
+    [self loadWebView:_refreshUrl];
 }
 
 - (WebView*)initializeWebView {
@@ -155,8 +184,16 @@ static const unsigned long DefaultsRefreshUnits = (unsigned long)RefreshDisabled
     return webView;
 }
 
-- (void)loadWebView {
-    [self.webView setMainFrameURL:_refreshUrl];
+- (void)uninitializeWebView {
+    [self.webView setFrameLoadDelegate:nil];
+    [self.webView setPolicyDelegate:nil];
+    [self.webView setUIDelegate:nil];
+    [self.webView setEditingDelegate:nil];
+    [self.webView close];
+}
+
+- (void)loadWebView: (NSString*)url {
+    [self.webView setMainFrameURL:url];
 }
 
 - (void)refreshWebView {
@@ -164,8 +201,6 @@ static const unsigned long DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 }
 
 #pragma mark Web View Delegates
-
-#pragma mark WebPolicyDelegate
 
 - (void)webView:(WebView *)webView
     decidePolicyForNewWindowAction:(NSDictionary *)actionInformation
