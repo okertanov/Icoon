@@ -11,9 +11,9 @@
 #import <ScreenSaver/ScreenSaver.h>
 
 typedef enum {
-    RefreshDisabled,
-    RefreshSeconds,
-    RefreshMinutes
+    RefreshDisabled = 0,
+    RefreshSeconds = 1,
+    RefreshMinutes = 2
 } RefreshUnits;
 
 @interface LXKIcoonView : ScreenSaverView {

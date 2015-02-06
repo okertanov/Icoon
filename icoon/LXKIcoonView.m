@@ -129,7 +129,7 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 }
 
 - (void) updateRefreshIntervalAvailable {
-    [self.refreshIntervalField setEnabled:[[self.refreshUnitsPopUp selectedItem] tag] > 0];
+    [self.refreshIntervalField setEnabled:[[self.refreshUnitsPopUp selectedItem] tag] > RefreshDisabled];
 }
 
 - (ScreenSaverDefaults*) initializeDefaults {
