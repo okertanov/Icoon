@@ -7,6 +7,7 @@
 //
 
 #import "LXKIcoonView.h"
+#import "LXKPreviewRenderer.h"
 
 //
 // Private Constants
@@ -44,7 +45,7 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 //
 @implementation LXKIcoonView
 
-@synthesize webView =_webView;
+@synthesize webView = _webView;
 @synthesize refreshTimer = _refreshTimer;
 
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
@@ -57,37 +58,61 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
         _defaults = [self initializeDefaults];
         [self loadDefaults];
         
-        _webView = [self initializeWebView];
-        
-        //[self setAnimationTimeInterval:1/30.0];
+        if(isPreview) {
+            //[self setAnimationTimeInterval:1/30.0];
+        }
+        else {
+            _webView = [self initializeWebView];
+        }
     }
+    
     return self;
 }
 
 - (void)startAnimation {
     [super startAnimation];
     
-    [self loadWebView:_refreshUrl];
+    if (self.isPreview) {
+        _renderer = [[LXKPreviewRenderer alloc] init];
+    }
+    else {
+        [self loadWebView:_refreshUrl];
+    }
 }
 
 - (void)stopAnimation {
-    [self loadWebView:@"about:blank"];
+    if (self.isPreview) {
+        _renderer = nil;
+    }
+    else {
+        [self loadWebView:@"about:blank"];
+    }
     
     [super stopAnimation];
 }
 
 - (void)drawRect:(NSRect)rect {
     [super drawRect:rect];
+    
+    if (_renderer != nil) {
+        [_renderer renderInRect:rect];
+    }
 }
 
 - (void)animateOneFrame {
-    return;
+    //[self setNeedsDisplay:YES];
 }
 
 - (BOOL)isAnimating {
     BOOL animating =  [super isAnimating];
     
     return animating;
+}
+
+- (BOOL)isPreview {
+    BOOL preview = [super isPreview];
+    
+    return preview;
 }
 
 + (BOOL)performGammaFade {

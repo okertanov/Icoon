@@ -10,6 +10,8 @@
 #import <WebKit/WebKit.h>
 #import <ScreenSaver/ScreenSaver.h>
 
+#import "LXKRenderer.h"
+
 typedef enum {
     RefreshDisabled = 0,
     RefreshSeconds = 1,
@@ -32,6 +34,11 @@ typedef enum {
     NSString* _refreshUrl;
     NSNumber* _refreshInterval;
     NSNumber* _refreshUnits;
+    
+    //
+    // Internals
+    //
+    id<LXKRenderer> _renderer;
 }
 
 @property (nonatomic, retain) IBOutlet WebView* webView;

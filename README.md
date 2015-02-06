@@ -9,6 +9,7 @@ Interesting links to use with Icoon
 [http://www.akamai.com/html/technology/](http://www.akamai.com/html/technology/dataviz1.html)  
 [http://newsmap.jp/](http://newsmap.jp/)  
 [http://www.axiis.org/examples/BrowserMarketShare.html](http://www.axiis.org/examples/BrowserMarketShare.html)  
+[http://zenrus.ru/](http://zenrus.ru/)  
 
 ### Lots of beautiful screensaver-alike pages:
 [http://www.chromeexperiments.com/](http://www.chromeexperiments.com/)  
