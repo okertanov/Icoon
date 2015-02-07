@@ -1,8 +1,8 @@
 //
-//  icoonView.h
-//  icoon
+//  LXKIcoonView.h
+//  Icoon Screen Saver
 //
-//  Created by Oleg Kertanov on 2/6/15.
+//  Created by Oleg Kertanov on 2/6/2015.
 //  Copyright (c) 2015 Oleg Kertanov. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 #import <WebKit/WebKit.h>
 #import <ScreenSaver/ScreenSaver.h>
 
-#import "LXKRenderer.h"
+#import "LXKRendererProtocol.h"
 
 typedef enum {
     RefreshDisabled = 0,
@@ -38,7 +38,7 @@ typedef enum {
     //
     // Internals
     //
-    id<LXKRenderer> _renderer;
+    id<LXKRendererProtocol> _renderer;
 }
 
 @property (nonatomic, retain) IBOutlet WebView* webView;

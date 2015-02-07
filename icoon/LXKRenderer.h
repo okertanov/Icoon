@@ -1,18 +1,15 @@
 //
 //  LXKRenderer.h
-//  icoon
+//  Icoon Screen Saver
 //
-//  Created by Oleg Kertanov on 2/6/15.
+//  Created by Oleg Kertanov on 2/6/2015.
 //  Copyright (c) 2015 Oleg Kertanov. All rights reserved.
 //
 
-#ifndef icoon_LXKRenderer_h
-#define icoon_LXKRenderer_h
+#import <Foundation/Foundation.h>
 
-@protocol LXKRenderer <NSObject>
--(id)init;
-- (void)dealloc;
-- (void)renderInRect:(NSRect)rect;
+#import "LXKRendererProtocol.h"
+
+@interface LXKRenderer : NSObject<LXKRendererProtocol>
+
 @end
-
-#endif

@@ -8,21 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		76296FB91A84E8850062966F /* ConfigureSheet.nib in Resources */ = {isa = PBXBuildFile; fileRef = 76296FB81A84E8850062966F /* ConfigureSheet.nib */; };
-		7630DCF61A85114300AFA119 /* LXKPreviewRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7630DCF41A85114300AFA119 /* LXKPreviewRenderer.h */; };
-		7630DCF71A85114300AFA119 /* LXKPreviewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7630DCF51A85114300AFA119 /* LXKPreviewRenderer.m */; };
 		76867F891A84BBE500947F02 /* LXKIcoonView.h in Headers */ = {isa = PBXBuildFile; fileRef = 76867F881A84BBE500947F02 /* LXKIcoonView.h */; };
 		76867F8B1A84BBE500947F02 /* LXKIcoonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76867F8A1A84BBE500947F02 /* LXKIcoonView.m */; };
+		C0AA41621A864028004F60ED /* LXKPreviewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA41601A864028004F60ED /* LXKPreviewRenderer.m */; };
+		C0AA41631A864028004F60ED /* LXKPreviewRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0AA41611A864028004F60ED /* LXKPreviewRenderer.h */; };
+		C0AA41651A8643E9004F60ED /* LXKRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA41641A8643E9004F60ED /* LXKRenderer.m */; };
+		C0AA41671A864581004F60ED /* LXKRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0AA41661A864581004F60ED /* LXKRenderer.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		76296FB81A84E8850062966F /* ConfigureSheet.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ConfigureSheet.nib; sourceTree = "<group>"; };
-		7630DCF31A850D5400AFA119 /* LXKRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXKRenderer.h; sourceTree = "<group>"; };
-		7630DCF41A85114300AFA119 /* LXKPreviewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LXKPreviewRenderer.h; path = ../LXKPreviewRenderer.h; sourceTree = "<group>"; };
-		7630DCF51A85114300AFA119 /* LXKPreviewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LXKPreviewRenderer.m; path = ../LXKPreviewRenderer.m; sourceTree = "<group>"; };
+		7630DCF31A850D5400AFA119 /* LXKRendererProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXKRendererProtocol.h; sourceTree = "<group>"; };
 		76867F831A84BBE400947F02 /* icoon.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = icoon.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		76867F871A84BBE400947F02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76867F881A84BBE500947F02 /* LXKIcoonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXKIcoonView.h; sourceTree = "<group>"; };
 		76867F8A1A84BBE500947F02 /* LXKIcoonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXKIcoonView.m; sourceTree = "<group>"; };
+		C0AA41601A864028004F60ED /* LXKPreviewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXKPreviewRenderer.m; sourceTree = "<group>"; };
+		C0AA41611A864028004F60ED /* LXKPreviewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXKPreviewRenderer.h; sourceTree = "<group>"; };
+		C0AA41641A8643E9004F60ED /* LXKRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXKRenderer.m; sourceTree = "<group>"; };
+		C0AA41661A864581004F60ED /* LXKRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXKRenderer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +59,14 @@
 		76867F851A84BBE400947F02 /* icoon */ = {
 			isa = PBXGroup;
 			children = (
-				76296FB81A84E8850062966F /* ConfigureSheet.nib */,
 				76867F881A84BBE500947F02 /* LXKIcoonView.h */,
 				76867F8A1A84BBE500947F02 /* LXKIcoonView.m */,
-				7630DCF31A850D5400AFA119 /* LXKRenderer.h */,
-				7630DCF41A85114300AFA119 /* LXKPreviewRenderer.h */,
-				7630DCF51A85114300AFA119 /* LXKPreviewRenderer.m */,
+				7630DCF31A850D5400AFA119 /* LXKRendererProtocol.h */,
+				C0AA41611A864028004F60ED /* LXKPreviewRenderer.h */,
+				C0AA41601A864028004F60ED /* LXKPreviewRenderer.m */,
+				C0AA41661A864581004F60ED /* LXKRenderer.h */,
+				C0AA41641A8643E9004F60ED /* LXKRenderer.m */,
+				76296FB81A84E8850062966F /* ConfigureSheet.nib */,
 				76867F861A84BBE400947F02 /* Supporting Files */,
 			);
 			path = icoon;
@@ -81,8 +87,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7630DCF61A85114300AFA119 /* LXKPreviewRenderer.h in Headers */,
+				C0AA41631A864028004F60ED /* LXKPreviewRenderer.h in Headers */,
 				76867F891A84BBE500947F02 /* LXKIcoonView.h in Headers */,
+				C0AA41671A864581004F60ED /* LXKRenderer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				76867F8B1A84BBE500947F02 /* LXKIcoonView.m in Sources */,
-				7630DCF71A85114300AFA119 /* LXKPreviewRenderer.m in Sources */,
+				C0AA41621A864028004F60ED /* LXKPreviewRenderer.m in Sources */,
+				C0AA41651A8643E9004F60ED /* LXKRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

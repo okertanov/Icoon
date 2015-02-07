@@ -1,8 +1,8 @@
 //
 //  LXKPreviewRenderer.m
-//  icoon
+//  Icoon Screen Saver
 //
-//  Created by Oleg Kertanov on 2/6/15.
+//  Created by Oleg Kertanov on 2/6/2015.
 //  Copyright (c) 2015 Oleg Kertanov. All rights reserved.
 //
 
@@ -26,7 +26,7 @@
 
 - (void)renderInRect:(NSRect)rect {
     CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
-    CGContextSetRGBFillColor(context, 0.9, 0.9, 0.9, 1.0);
+    CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 1.0);
     CGContextFillRect(context, NSRectToCGRect(rect));
 }
 

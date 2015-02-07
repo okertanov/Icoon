@@ -1,8 +1,8 @@
 //
-//  icoonView.m
-//  icoon
+//  LXKIcoonView.m
+//  Icoon Screen Saver
 //
-//  Created by Oleg Kertanov on 2/6/15.
+//  Created by Oleg Kertanov on 2/6/2015.
 //  Copyright (c) 2015 Oleg Kertanov. All rights reserved.
 //
 
@@ -14,7 +14,7 @@
 //
 static NSString* const ScreenSaverName = @"me.lexiko.icoon";
 static NSString* const DefaultsURLKey = @"URL";
-static NSString* const DefaultsURL = @"https://www.google.com/";
+static NSString* const DefaultsURL = @"http://www.google.com/trends/hottrends/visualize?nrow=5&ncol=5";
 static NSString* const DefaultsRefreshIntervalKey = @"RefreshInterval";
 static double const DefaultsRefreshInterval = 1.0;
 static NSString* const DefaultsRefreshUnitsKey = @"RefreshUnits";
@@ -125,9 +125,12 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 
 - (NSWindow*)configureSheet {
     if (self.configSheet == nil) {
+        #pragma GCC diagnostic push
+        #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
         if (![NSBundle loadNibNamed:@"ConfigureSheet" owner:self]) {
             NSLog(@"Unable to load configuration sheet");
         }
+        #pragma GCC diagnostic pop
     }
     
     [self.urlField setStringValue:_refreshUrl];
