@@ -10,7 +10,7 @@
 #define icoon_LXKRenderer_h
 
 @protocol LXKRendererProtocol <NSObject>
--(id)init;
+-(instancetype)init;
 - (void)dealloc;
 - (void)renderInRect:(NSRect)rect;
 @end

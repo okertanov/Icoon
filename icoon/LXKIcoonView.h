@@ -10,6 +10,7 @@
 #import <WebKit/WebKit.h>
 #import <ScreenSaver/ScreenSaver.h>
 
+#import "LXKWebView.h"
 #import "LXKRendererProtocol.h"
 
 typedef enum {
@@ -24,7 +25,7 @@ typedef enum {
     //
     // Synthesized Propertiew
     //
-    WebView* _webView;
+    LXKWebView* _webView;
     NSTimer* _refreshTimer;
     
     //

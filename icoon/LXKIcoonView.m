@@ -34,7 +34,7 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 - (void)saveDefaults;
 - (void)notifyChangedDefaults;
 
-- (WebView*)initializeWebView;
+- (LXKWebView*)initializeWebView;
 - (void)uninitializeWebView;
 - (void)loadWebView: (NSString*)url;
 - (void)refreshWebView;
@@ -192,20 +192,8 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
     [self loadWebView:_refreshUrl];
 }
 
-- (WebView*)initializeWebView {
-    WebView* webView = [[WebView alloc] initWithFrame:[self bounds] frameName:nil groupName:nil];
-    
-    [webView setFrameLoadDelegate:self];
-    [webView setPolicyDelegate:self];
-    [webView setUIDelegate:self];
-    [webView setEditingDelegate:self];
-    [webView setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
-    [webView setAutoresizesSubviews:YES];
-    [webView setDrawsBackground:NO];
-    [webView setShouldUpdateWhileOffscreen:YES];
-    
-    NSColor *color = [NSColor colorWithCalibratedWhite:0.0 alpha:1.0];
-    [[webView layer] setBackgroundColor:color.CGColor];
+- (LXKWebView*)initializeWebView {
+    LXKWebView* webView = [[LXKWebView alloc] initWithFrame:self.bounds frameName:nil groupName:nil];
     
     [self addSubview:webView];
     
@@ -213,11 +201,7 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 }
 
 - (void)uninitializeWebView {
-    [self.webView setFrameLoadDelegate:nil];
-    [self.webView setPolicyDelegate:nil];
-    [self.webView setUIDelegate:nil];
-    [self.webView setEditingDelegate:nil];
-    [self.webView close];
+    self.webView = nil;
 }
 
 - (void)loadWebView: (NSString*)url {
@@ -226,74 +210,6 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 
 - (void)refreshWebView {
     [self.webView reload:nil];
-}
-
-#pragma mark Web View Delegates
-
-- (void)webView:(WebView *)webView
-    decidePolicyForNewWindowAction:(NSDictionary *)actionInformation
-    request:(NSURLRequest *)request
-    newFrameName:(NSString *)frameName
-    decisionListener:(id < WebPolicyDecisionListener >)listener {
-    // Don't open new windows.
-    [listener ignore];
-}
-
-- (void)webView:(WebView *)webView didFinishLoadForFrame:(WebFrame *)frame {
-    [self.webView resignFirstResponder];
-    [[[self.webView mainFrame] frameView] setAllowsScrolling:NO];
-}
-
-- (NSResponder *)webViewFirstResponder:(WebView *)sender {
-    return self;
-}
-
-- (void)webViewClose:(WebView *)sender {
-    return;
-}
-
-- (BOOL)webViewIsResizable:(WebView *)sender {
-    return NO;
-}
-
-- (BOOL)webViewAreToolbarsVisible:(WebView *)sender {
-    return NO;
-}
-
-- (BOOL)webViewIsStatusBarVisible:(WebView *)sender {
-    return NO;
-}
-
-- (void)webViewRunModal:(WebView *)sender {
-    return;
-}
-
-- (void)webViewShow:(WebView *)sender {
-    return;
-}
-
-- (void)webViewUnfocus:(WebView *)sender {
-    return;
-}
-
-- (NSView *)hitTest:(NSPoint)aPoint {
-    return self;
-}
-
-- (void)keyDown:(NSEvent *)theEvent {
-    return;
-}
-
-- (void)keyUp:(NSEvent *)theEvent {
-    return;
-}
-
-- (BOOL)acceptsFirstResponder {
-    return YES;
-}
-
-- (BOOL)resignFirstResponder {
-    return NO;
 }
 
 @end

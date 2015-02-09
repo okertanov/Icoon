@@ -14,6 +14,8 @@
 		C0AA41631A864028004F60ED /* LXKPreviewRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0AA41611A864028004F60ED /* LXKPreviewRenderer.h */; };
 		C0AA41651A8643E9004F60ED /* LXKRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA41641A8643E9004F60ED /* LXKRenderer.m */; };
 		C0AA41671A864581004F60ED /* LXKRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0AA41661A864581004F60ED /* LXKRenderer.h */; };
+		C0AA416A1A893CA2004F60ED /* LXKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = C0AA41681A893CA2004F60ED /* LXKWebView.h */; };
+		C0AA416B1A893CA2004F60ED /* LXKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA41691A893CA2004F60ED /* LXKWebView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		C0AA41611A864028004F60ED /* LXKPreviewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXKPreviewRenderer.h; sourceTree = "<group>"; };
 		C0AA41641A8643E9004F60ED /* LXKRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXKRenderer.m; sourceTree = "<group>"; };
 		C0AA41661A864581004F60ED /* LXKRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXKRenderer.h; sourceTree = "<group>"; };
+		C0AA41681A893CA2004F60ED /* LXKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXKWebView.h; sourceTree = "<group>"; };
+		C0AA41691A893CA2004F60ED /* LXKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXKWebView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				C0AA41601A864028004F60ED /* LXKPreviewRenderer.m */,
 				C0AA41661A864581004F60ED /* LXKRenderer.h */,
 				C0AA41641A8643E9004F60ED /* LXKRenderer.m */,
+				C0AA41681A893CA2004F60ED /* LXKWebView.h */,
+				C0AA41691A893CA2004F60ED /* LXKWebView.m */,
 				76296FB81A84E8850062966F /* ConfigureSheet.nib */,
 				76867F861A84BBE400947F02 /* Supporting Files */,
 			);
@@ -89,6 +95,7 @@
 			files = (
 				C0AA41631A864028004F60ED /* LXKPreviewRenderer.h in Headers */,
 				76867F891A84BBE500947F02 /* LXKIcoonView.h in Headers */,
+				C0AA416A1A893CA2004F60ED /* LXKWebView.h in Headers */,
 				C0AA41671A864581004F60ED /* LXKRenderer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +171,7 @@
 				76867F8B1A84BBE500947F02 /* LXKIcoonView.m in Sources */,
 				C0AA41621A864028004F60ED /* LXKPreviewRenderer.m in Sources */,
 				C0AA41651A8643E9004F60ED /* LXKRenderer.m in Sources */,
+				C0AA416B1A893CA2004F60ED /* LXKWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
