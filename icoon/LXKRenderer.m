@@ -1,6 +1,6 @@
 //
 //  LXKRenderer.m
-//  icoon
+//  Icoon Screen Saver
 //
 //  Created by Oleg Kertanov on 07/02/15.
 //  Copyright (c) 2015 Oleg Kertanov. All rights reserved.
