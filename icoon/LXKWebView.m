@@ -101,11 +101,11 @@
 }
 
 - (BOOL)acceptsFirstResponder {
-    return YES;
+    return NO;
 }
 
 - (BOOL)resignFirstResponder {
-    return NO;
+    return YES;
 }
 
 @end

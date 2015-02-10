@@ -18,6 +18,8 @@
     @private
     
     NSView* _renderView;
+    NSTextField* _textLabel;
+    NSDictionary* _configDict;
 }
 
 @end

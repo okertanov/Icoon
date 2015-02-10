@@ -11,6 +11,13 @@
 
 #import "LXKPreviewRenderer.h"
 
+//
+// Private Methods
+//
+@interface LXKPreviewRenderer()
+- (void)notifyChangedConfiguration;
+@end
+
 @implementation LXKPreviewRenderer
 
 -(instancetype)init {
@@ -24,22 +31,38 @@
         [_renderView setWantsLayer:YES];
         _renderView.layer.backgroundColor = [[NSColor clearColor] CGColor];
         
-        NSTextField* textLabel = [[NSTextField alloc] initWithFrame:rect];
-        [textLabel setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
-        [textLabel setStringValue:@"apple.com"];
-        [textLabel setBezeled:NO];
-        [textLabel setDrawsBackground:NO];
-        [textLabel setEditable:NO];
-        [textLabel setSelectable:NO];
-        [textLabel setTextColor:[NSColor darkGrayColor]];
-        [textLabel setAlignment:NSCenterTextAlignment];
-        [_renderView addSubview:textLabel];
+        _textLabel = [[NSTextField alloc] initWithFrame:rect];
+        [_textLabel setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+        [_textLabel setBezeled:NO];
+        [_textLabel setDrawsBackground:NO];
+        [_textLabel setEditable:NO];
+        [_textLabel setSelectable:NO];
+        [_textLabel setAlignment:NSCenterTextAlignment];
+        [_textLabel setTextColor:[NSColor darkGrayColor]];
+        [_textLabel setStringValue:@""];
+        [_renderView addSubview:_textLabel];
     }
     
     return self;
 }
 
 -(void)dealloc {
+    if (_renderView != nil) {
+        [_renderView removeFromSuperviewWithoutNeedingDisplay];
+    }
+    
+    if (_textLabel != nil) {
+        [_textLabel removeFromSuperviewWithoutNeedingDisplay];
+    }
+    
+    _renderView = nil;
+    
+    _configDict = nil;
+}
+
+-(void)configureWithDict:(NSDictionary*)dict {
+    _configDict = dict;
+    [self notifyChangedConfiguration];
 }
 
 -(void)renderInRect:(NSRect)rect {
@@ -47,6 +70,15 @@
 
 -(NSView*)renderView {
     return _renderView;
+}
+
+- (void)notifyChangedConfiguration {
+    NSString* configUrl = _configDict != nil ? [_configDict valueForKey:@"Url"] : @"";
+    
+    if (configUrl != nil && [configUrl length] > 0) {
+        NSString* configUrlWithPadding = [@"\n\n" stringByAppendingString:configUrl];
+        [_textLabel setStringValue:configUrlWithPadding];
+    }
 }
 
 @end

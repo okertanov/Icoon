@@ -11,6 +11,8 @@
 @protocol LXKFrameRendererProtocol <NSObject>
 -(instancetype)init;
 -(void)dealloc;
+
+-(void)configureWithDict:(NSDictionary*)dict;
 -(void)renderInRect:(NSRect)rect;
 -(NSView*)renderView;
 @end

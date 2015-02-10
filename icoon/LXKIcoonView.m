@@ -24,7 +24,7 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 //
 // Private Methods
 //
-@interface LXKIcoonView ()
+@interface LXKIcoonView()
 - (IBAction) okClick:(id)sender;
 - (IBAction)popUpClick:(id)sender;
 
@@ -35,8 +35,6 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 - (void)saveDefaults;
 - (void)notifyChangedDefaults;
 
-- (LXKWebView*)initializeWebView;
-- (void)uninitializeWebView;
 - (void)loadWebView: (NSString*)url;
 - (void)refreshWebView;
 @end
@@ -61,12 +59,16 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
         
         if (self.isPreview) {
             _renderer = [[LXKPreviewRenderer alloc] init];
+            [_renderer configureWithDict:@{ @"Url" : _refreshUrl }];
             NSView* rendererView = [_renderer renderView];
             [rendererView setFrame:self.bounds];
             [self addSubview:rendererView];
         }
         else {
-            _webView = [self initializeWebView];
+            _webView = [[LXKWebView alloc]
+                        initWithFrame:self.bounds
+                        frameName:nil
+                        groupName:nil];;
             [self addSubview:_webView];
         }
         
@@ -101,7 +103,7 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 }
 
 - (BOOL)isAnimating {
-    BOOL animating =  [super isAnimating];
+    BOOL animating = [super isAnimating];
     
     return animating;
 }
@@ -140,7 +142,9 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 }
 
 - (void)dealloc {
-    [self uninitializeWebView];
+    _webView = nil;
+    _renderer = nil;
+    _defaults = nil;
 }
 
 - (IBAction) okClick:(id)sender {
@@ -151,6 +155,23 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 
 - (IBAction)popUpClick:(id)sender {
     [self updateRefreshIntervalAvailable];
+}
+
+- (void)keyDown:(NSEvent *)theEvent {
+    [self interpretKeyEvents:[NSArray arrayWithObject:theEvent]];
+    [[NSApplication sharedApplication] terminate:self];
+}
+
+- (void)setFrameSize:(NSSize)newSize {
+    [super setFrameSize:newSize];
+}
+
+- (BOOL)acceptsFirstResponder {
+    return NO;
+}
+
+- (BOOL)resignFirstResponder {
+    return YES;
 }
 
 - (void) updateRefreshIntervalAvailable {
@@ -187,24 +208,19 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 - (void)notifyChangedDefaults {
     [self loadDefaults];
     [self loadWebView:_refreshUrl];
-}
-
-- (LXKWebView*)initializeWebView {
-    LXKWebView* webView = [[LXKWebView alloc] initWithFrame:self.bounds frameName:nil groupName:nil];
     
-    return webView;
-}
-
-- (void)uninitializeWebView {
-    self.webView = nil;
+    // Refresh renderer
+    if (_renderer != nil) {
+        [_renderer configureWithDict:@{ @"Url" : _refreshUrl }];
+    }
 }
 
 - (void)loadWebView: (NSString*)url {
-    [self.webView setMainFrameURL:url];
+    [_webView setMainFrameURL:url];
 }
 
 - (void)refreshWebView {
-    [self.webView reload:nil];
+    [_webView reload:nil];
 }
 
 @end
