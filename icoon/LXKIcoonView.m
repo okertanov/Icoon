@@ -68,11 +68,9 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
             _webView = [[LXKWebView alloc]
                         initWithFrame:self.bounds
                         frameName:nil
-                        groupName:nil];;
+                        groupName:nil];
             [self addSubview:_webView];
         }
-        
-        //[self setAnimationTimeInterval:1/30.0];
     }
     
     return self;
@@ -99,7 +97,6 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 }
 
 - (void)animateOneFrame {
-    //[self setNeedsDisplay:YES];
 }
 
 - (BOOL)isAnimating {
@@ -159,7 +156,6 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 
 - (void)keyDown:(NSEvent *)theEvent {
     [self interpretKeyEvents:[NSArray arrayWithObject:theEvent]];
-    [[NSApplication sharedApplication] terminate:self];
 }
 
 - (void)setFrameSize:(NSSize)newSize {
@@ -175,7 +171,8 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 }
 
 - (void) updateRefreshIntervalAvailable {
-    [self.refreshIntervalField setEnabled:[[self.refreshUnitsPopUp selectedItem] tag] > RefreshDisabled];
+    [self.refreshIntervalField
+     setEnabled:[[self.refreshUnitsPopUp selectedItem] tag] > RefreshDisabled];
 }
 
 - (ScreenSaverDefaults*) initializeDefaults {

@@ -11,6 +11,7 @@ Interesting links to use with Icoon
 [http://www.axiis.org/examples/BrowserMarketShare.html](http://www.axiis.org/examples/BrowserMarketShare.html)  
 [http://mrdoob.github.io/three.js/examples/css3d_periodictable.html](http://mrdoob.github.io/three.js/examples/css3d_periodictable.html)  
 [http://zenrus.ru/](http://zenrus.ru/)  
+[http://zengrecha.ru/](http://zengrecha.ru/)  
 
 ### Lots of beautiful screensaver-alike pages:
 [https://developer.mozilla.org/en-US/demos/](https://developer.mozilla.org/en-US/demos/)  
