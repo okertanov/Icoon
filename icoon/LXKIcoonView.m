@@ -13,6 +13,7 @@
 // Private Constants
 //
 static NSString* const ScreenSaverName = @"me.lexiko.icoon";
+static NSString* const BlankUrl = @"about:blank";
 static NSString* const DefaultsURLKey = @"URL";
 static NSString* const DefaultsURL = @"http://www.google.com/trends/hottrends/visualize?nrow=5&ncol=5";
 static NSString* const DefaultsRefreshIntervalKey = @"RefreshInterval";
@@ -58,12 +59,10 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
         _defaults = [self initializeDefaults];
         [self loadDefaults];
         
-        if(isPreview) {
-            //[self setAnimationTimeInterval:1/30.0];
-        }
-        else {
-            _webView = [self initializeWebView];
-        }
+        _webView = [self initializeWebView];
+        
+        [self addSubview:_webView];
+        //[self setAnimationTimeInterval:1/30.0];
     }
     
     return self;
@@ -72,31 +71,17 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 - (void)startAnimation {
     [super startAnimation];
     
-    if (self.isPreview) {
-        _renderer = [[LXKPreviewRenderer alloc] init];
-    }
-    else {
-        [self loadWebView:_refreshUrl];
-    }
+    [self loadWebView:_refreshUrl];
 }
 
 - (void)stopAnimation {
-    if (self.isPreview) {
-        _renderer = nil;
-    }
-    else {
-        [self loadWebView:@"about:blank"];
-    }
+    [self loadWebView:BlankUrl];
     
     [super stopAnimation];
 }
 
 - (void)drawRect:(NSRect)rect {
     [super drawRect:rect];
-    
-    if (_renderer != nil) {
-        [_renderer renderInRect:rect];
-    }
 }
 
 - (void)animateOneFrame {
@@ -194,8 +179,6 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 
 - (LXKWebView*)initializeWebView {
     LXKWebView* webView = [[LXKWebView alloc] initWithFrame:self.bounds frameName:nil groupName:nil];
-    
-    [self addSubview:webView];
     
     return webView;
 }

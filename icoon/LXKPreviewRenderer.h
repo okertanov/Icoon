@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import "LXKRendererProtocol.h"
+#import "LXKFrameRendererProtocol.h"
 
 //
 // TODO: consider to use QCView
 // See http://stackoverflow.com/questions/8327138/cocoa-screensaver-embed-quartz
 //
-@interface LXKPreviewRenderer : NSObject<LXKRendererProtocol>
+@interface LXKPreviewRenderer : NSObject<LXKFrameRendererProtocol> {
+}
 
 @end

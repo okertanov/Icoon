@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Oleg Kertanov. All rights reserved.
 //
 
+#import <Cocoa/Cocoa.h>
 #import <AppKit/AppKit.h>
 
 #import "LXKPreviewRenderer.h"
@@ -25,9 +26,6 @@
 }
 
 - (void)renderInRect:(NSRect)rect {
-    CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
-    CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 1.0);
-    CGContextFillRect(context, NSRectToCGRect(rect));
 }
 
 @end

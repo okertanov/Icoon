@@ -11,7 +11,7 @@
 #import <ScreenSaver/ScreenSaver.h>
 
 #import "LXKWebView.h"
-#import "LXKRendererProtocol.h"
+#import "LXKFrameRendererProtocol.h"
 
 typedef enum {
     RefreshDisabled = 0,
@@ -39,7 +39,7 @@ typedef enum {
     //
     // Internals
     //
-    id<LXKRendererProtocol> _renderer;
+    id<LXKFrameRendererProtocol> _renderer;
 }
 
 @property (nonatomic, retain) IBOutlet WebView* webView;
