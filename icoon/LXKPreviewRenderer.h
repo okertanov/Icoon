@@ -15,6 +15,9 @@
 // See http://stackoverflow.com/questions/8327138/cocoa-screensaver-embed-quartz
 //
 @interface LXKPreviewRenderer : NSObject<LXKFrameRendererProtocol> {
+    @private
+    
+    NSView* _renderView;
 }
 
 @end

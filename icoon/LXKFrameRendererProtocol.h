@@ -10,7 +10,8 @@
 
 @protocol LXKFrameRendererProtocol <NSObject>
 -(instancetype)init;
-- (void)dealloc;
-- (void)renderInRect:(NSRect)rect;
+-(void)dealloc;
+-(void)renderInRect:(NSRect)rect;
+-(NSView*)renderView;
 @end
 

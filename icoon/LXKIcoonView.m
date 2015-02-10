@@ -59,9 +59,17 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
         _defaults = [self initializeDefaults];
         [self loadDefaults];
         
-        _webView = [self initializeWebView];
+        if (self.isPreview) {
+            _renderer = [[LXKPreviewRenderer alloc] init];
+            NSView* rendererView = [_renderer renderView];
+            [rendererView setFrame:self.bounds];
+            [self addSubview:rendererView];
+        }
+        else {
+            _webView = [self initializeWebView];
+            [self addSubview:_webView];
+        }
         
-        [self addSubview:_webView];
         //[self setAnimationTimeInterval:1/30.0];
     }
     
@@ -71,11 +79,15 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 - (void)startAnimation {
     [super startAnimation];
     
-    [self loadWebView:_refreshUrl];
+    if (_webView != nil) {
+        [self loadWebView:_refreshUrl];
+    }
 }
 
 - (void)stopAnimation {
-    [self loadWebView:BlankUrl];
+    if (_webView != nil) {
+        [self loadWebView:BlankUrl];
+    }
     
     [super stopAnimation];
 }

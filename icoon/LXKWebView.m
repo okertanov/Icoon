@@ -20,7 +20,7 @@
         [self setPolicyDelegate:self];
         [self setUIDelegate:self];
         [self setEditingDelegate:self];
-        [self setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
+        [self setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
         [self setAutoresizesSubviews:YES];
         [self setDrawsBackground:NO];
         [self setShouldUpdateWhileOffscreen:YES];
