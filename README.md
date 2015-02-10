@@ -10,6 +10,7 @@ Interesting links to use with Icoon
 [http://newsmap.jp/](http://newsmap.jp/)  
 [http://www.axiis.org/examples/BrowserMarketShare.html](http://www.axiis.org/examples/BrowserMarketShare.html)  
 [http://mrdoob.github.io/three.js/examples/css3d_periodictable.html](http://mrdoob.github.io/three.js/examples/css3d_periodictable.html)  
+[http://roxik.com/cat/](http://roxik.com/cat/)  
 [http://zenrus.ru/](http://zenrus.ru/)  
 [http://zengrecha.ru/](http://zengrecha.ru/)  
 

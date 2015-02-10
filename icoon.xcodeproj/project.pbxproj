@@ -14,7 +14,6 @@
 		C0AA41631A864028004F60ED /* LXKPreviewRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0AA41611A864028004F60ED /* LXKPreviewRenderer.h */; };
 		C0AA416A1A893CA2004F60ED /* LXKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = C0AA41681A893CA2004F60ED /* LXKWebView.h */; };
 		C0AA416B1A893CA2004F60ED /* LXKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA41691A893CA2004F60ED /* LXKWebView.m */; };
-		C0AA416D1A8A7F9E004F60ED /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C0AA416C1A8A7F9E004F60ED /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -198,7 +197,6 @@
 			files = (
 				76867F8B1A84BBE500947F02 /* LXKIcoonView.m in Sources */,
 				C0AA41621A864028004F60ED /* LXKPreviewRenderer.m in Sources */,
-				C0AA416D1A8A7F9E004F60ED /* README.md in Sources */,
 				C0AA416B1A893CA2004F60ED /* LXKWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
