@@ -3,6 +3,8 @@ Icoon – OSX Screen Saver
 
 Interesting links to use with Icoon
 -----------------------------------
+
+### Main and beautiful
 [http://tweetping.net/](http://tweetping.net/)  
 [http://www.google.com/trends/hottrends/visualize](http://www.google.com/trends/hottrends/visualize)  
 [http://www.taggalaxy.de/](http://www.taggalaxy.de/)  
@@ -14,9 +16,16 @@ Interesting links to use with Icoon
 [http://zenrus.ru/](http://zenrus.ru/)  
 [http://zengrecha.ru/](http://zengrecha.ru/)  
 
-### Lots of beautiful screensaver-alike pages:
+### Other screensaver-alike pages
+[http://stars.chromeexperiments.com/](http://stars.chromeexperiments.com/)  
+[http://www.google.com/doodles/rubiks-cube](http://www.google.com/doodles/rubiks-cube)  
+[http://oos.moxiecode.com/js_webgl/particles_morph/](http://oos.moxiecode.com/js_webgl/particles_morph/)  
+[http://www.chromeexperiments.com/detail/helvetica-clock-2/?f=webgl](http://www.chromeexperiments.com/detail/helvetica-clock-2/?f=webgl)  
+
+### Lots of beautiful screensaver-alike collections
 [https://developer.mozilla.org/en-US/demos/](https://developer.mozilla.org/en-US/demos/)  
 [http://www.chromeexperiments.com/](http://www.chromeexperiments.com/)  
+[http://www.chromeexperiments.com/webgl/](http://www.chromeexperiments.com/webgl/)  
 [http://mashable.com/category/data-visualization/](http://mashable.com/category/data-visualization/)  
 [http://d3js.org/](http://d3js.org/)  
 
