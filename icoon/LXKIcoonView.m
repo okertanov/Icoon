@@ -15,7 +15,7 @@
 static NSString* const ScreenSaverName = @"me.lexiko.icoon";
 static NSString* const BlankUrl = @"about:blank";
 static NSString* const DefaultsURLKey = @"URL";
-static NSString* const DefaultsURL = @"http://www.google.com/trends/hottrends/visualize?nrow=5&ncol=5";
+static NSString* const DefaultsURL = @"http://www.google.com/trends/hottrends/visualize";
 static NSString* const DefaultsRefreshIntervalKey = @"RefreshInterval";
 static double const DefaultsRefreshInterval = 1.0;
 static NSString* const DefaultsRefreshUnitsKey = @"RefreshUnits";
