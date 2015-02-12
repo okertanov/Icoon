@@ -10,10 +10,8 @@
 
 @implementation LXKWebView
 
-- (instancetype)initWithFrame:(NSRect)frameRect
-                    frameName:(NSString *)frameName
-                    groupName:(NSString *)groupName {
-    self = [super initWithFrame:frameRect frameName:frameName groupName:groupName];
+- (instancetype)initWithFrame:(NSRect)frameRect {
+    self = [super initWithFrame:frameRect frameName:nil groupName:nil];
     
     if (self) {
         [self setFrameLoadDelegate:self];
@@ -38,6 +36,14 @@
     [self setUIDelegate:nil];
     [self setEditingDelegate:nil];
     [self close];
+}
+
+- (void)load:(NSString*)url {
+    [self setMainFrameURL:url];
+}
+
+- (void)reload {
+    [self reload:nil];
 }
 
 #pragma mark Web View Delegates

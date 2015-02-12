@@ -34,3 +34,10 @@ See also
 [tlrobinson/WebSaver](https://github.com/tlrobinson/WebSaver)  
 [liquidx/webviewscreensaver](https://github.com/liquidx/webviewscreensaver)  
 
+Other
+-----
+
+    ~/Library/Screen Savers
+    .qtz screen savers
+    /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background -module icoon
+

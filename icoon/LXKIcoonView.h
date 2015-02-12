@@ -42,7 +42,7 @@ typedef enum {
     id<LXKFrameRendererProtocol> _renderer;
 }
 
-@property (nonatomic, retain) IBOutlet WebView* webView;
+@property (nonatomic, retain) IBOutlet LXKWebView* webView;
 @property (nonatomic, retain) IBOutlet NSTimer* refreshTimer;
 
 //

@@ -10,4 +10,7 @@
 
 @interface LXKWebView : WebView
 
+- (void)load:(NSString*)url;
+- (void)reload;
+    
 @end

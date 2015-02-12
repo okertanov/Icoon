@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		76296FB91A84E8850062966F /* ConfigureSheet.nib in Resources */ = {isa = PBXBuildFile; fileRef = 76296FB81A84E8850062966F /* ConfigureSheet.nib */; };
+		763028091A8CF0B80003C8BF /* LXKWKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 763028071A8CF0B80003C8BF /* LXKWKWebView.h */; };
+		7630280A1A8CF0B80003C8BF /* LXKWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 763028081A8CF0B80003C8BF /* LXKWKWebView.m */; };
 		76867F891A84BBE500947F02 /* LXKIcoonView.h in Headers */ = {isa = PBXBuildFile; fileRef = 76867F881A84BBE500947F02 /* LXKIcoonView.h */; };
 		76867F8B1A84BBE500947F02 /* LXKIcoonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76867F8A1A84BBE500947F02 /* LXKIcoonView.m */; };
+		76AB43F81A8CFC0D003DD55D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76AB43F61A8CFBCC003DD55D /* WebKit.framework */; };
 		C0AA41621A864028004F60ED /* LXKPreviewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA41601A864028004F60ED /* LXKPreviewRenderer.m */; };
 		C0AA41631A864028004F60ED /* LXKPreviewRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0AA41611A864028004F60ED /* LXKPreviewRenderer.h */; };
 		C0AA416A1A893CA2004F60ED /* LXKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = C0AA41681A893CA2004F60ED /* LXKWebView.h */; };
@@ -18,11 +21,14 @@
 
 /* Begin PBXFileReference section */
 		76296FB81A84E8850062966F /* ConfigureSheet.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ConfigureSheet.nib; sourceTree = "<group>"; };
+		763028071A8CF0B80003C8BF /* LXKWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXKWKWebView.h; sourceTree = "<group>"; };
+		763028081A8CF0B80003C8BF /* LXKWKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXKWKWebView.m; sourceTree = "<group>"; };
 		7630DCF31A850D5400AFA119 /* LXKFrameRendererProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXKFrameRendererProtocol.h; sourceTree = "<group>"; };
 		76867F831A84BBE400947F02 /* icoon.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = icoon.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		76867F871A84BBE400947F02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76867F881A84BBE500947F02 /* LXKIcoonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXKIcoonView.h; sourceTree = "<group>"; };
 		76867F8A1A84BBE500947F02 /* LXKIcoonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXKIcoonView.m; sourceTree = "<group>"; };
+		76AB43F61A8CFBCC003DD55D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		C0AA41601A864028004F60ED /* LXKPreviewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXKPreviewRenderer.m; sourceTree = "<group>"; };
 		C0AA41611A864028004F60ED /* LXKPreviewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXKPreviewRenderer.h; sourceTree = "<group>"; };
 		C0AA41681A893CA2004F60ED /* LXKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXKWebView.h; sourceTree = "<group>"; };
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76AB43F81A8CFC0D003DD55D /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				76867F851A84BBE400947F02 /* icoon */,
+				76AB43F91A8CFC1B003DD55D /* Frameworks */,
 				76867F841A84BBE400947F02 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +86,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		76AB43F91A8CFC1B003DD55D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76AB43F61A8CFBCC003DD55D /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		76D1DC6B1A89FFD600445A94 /* Renderers */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +109,8 @@
 			children = (
 				C0AA41681A893CA2004F60ED /* LXKWebView.h */,
 				C0AA41691A893CA2004F60ED /* LXKWebView.m */,
+				763028071A8CF0B80003C8BF /* LXKWKWebView.h */,
+				763028081A8CF0B80003C8BF /* LXKWKWebView.m */,
 			);
 			name = WebView;
 			sourceTree = "<group>";
@@ -123,6 +141,7 @@
 			files = (
 				C0AA41631A864028004F60ED /* LXKPreviewRenderer.h in Headers */,
 				76867F891A84BBE500947F02 /* LXKIcoonView.h in Headers */,
+				763028091A8CF0B80003C8BF /* LXKWKWebView.h in Headers */,
 				C0AA416A1A893CA2004F60ED /* LXKWebView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +217,7 @@
 				76867F8B1A84BBE500947F02 /* LXKIcoonView.m in Sources */,
 				C0AA41621A864028004F60ED /* LXKPreviewRenderer.m in Sources */,
 				C0AA416B1A893CA2004F60ED /* LXKWebView.m in Sources */,
+				7630280A1A8CF0B80003C8BF /* LXKWKWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

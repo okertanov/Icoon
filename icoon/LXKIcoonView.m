@@ -34,9 +34,6 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 - (void)loadDefaults;
 - (void)saveDefaults;
 - (void)notifyChangedDefaults;
-
-- (void)loadWebView: (NSString*)url;
-- (void)refreshWebView;
 @end
 
 //
@@ -65,10 +62,7 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
             [self addSubview:rendererView];
         }
         else {
-            _webView = [[LXKWebView alloc]
-                        initWithFrame:self.bounds
-                        frameName:nil
-                        groupName:nil];
+            _webView = [[LXKWebView alloc] initWithFrame:self.bounds];
             [self addSubview:_webView];
         }
     }
@@ -80,13 +74,13 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
     [super startAnimation];
     
     if (_webView != nil) {
-        [self loadWebView:_refreshUrl];
+        [_webView load:_refreshUrl];
     }
 }
 
 - (void)stopAnimation {
     if (_webView != nil) {
-        [self loadWebView:BlankUrl];
+        [_webView load:BlankUrl];
     }
     
     [super stopAnimation];
@@ -204,20 +198,12 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
 
 - (void)notifyChangedDefaults {
     [self loadDefaults];
-    [self loadWebView:_refreshUrl];
+    [_webView load:_refreshUrl];
     
     // Refresh renderer
     if (_renderer != nil) {
         [_renderer configureWithDict:@{ @"Url" : _refreshUrl }];
     }
-}
-
-- (void)loadWebView: (NSString*)url {
-    [_webView setMainFrameURL:url];
-}
-
-- (void)refreshWebView {
-    [_webView reload:nil];
 }
 
 @end
