@@ -13,6 +13,10 @@ Interesting links to use with Icoon
 [http://www.axiis.org/examples/BrowserMarketShare.html](http://www.axiis.org/examples/BrowserMarketShare.html)  
 [http://mrdoob.github.io/three.js/examples/css3d_periodictable.html](http://mrdoob.github.io/three.js/examples/css3d_periodictable.html)  
 [http://roxik.com/cat/](http://roxik.com/cat/)  
+
+### Zen-alike
+[http://www.donothingfor2minutes.com/](http://www.donothingfor2minutes.com/)  
+[http://www.calm.com/](http://www.calm.com/)  
 [http://zenrus.ru/](http://zenrus.ru/)  
 [http://zengrecha.ru/](http://zengrecha.ru/)  
 
