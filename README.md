@@ -45,3 +45,14 @@ Other
     .qtz screen savers
     /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background -module icoon
 
+TODO:
+-----
+ - Donate button
+ - Play/Stop on Desktop button
+ - Link to site label
+ - Post to HN
+ - Make the presentation videos and embedd them to GH README.md
+ - Make the release zips and link them on GH page
+ - To think about sites list and easy selection
+ - To disable or implement Refresh UI
+
