@@ -56,3 +56,5 @@ TODO:
  - To think about sites list and easy selection
  - To disable or implement Refresh UI
 
+https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=okertanov%40gmail%2ecom&lc=US&item_name=Oleh%20Kertanov&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
+
