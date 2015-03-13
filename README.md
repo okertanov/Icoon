@@ -1,5 +1,9 @@
-Icoon – OSX Screen Saver
-========================
+Icoon – OSX Screen Saver with Your Web Page
+===========================================
+
+Releases
+--------
+[Icoon 1.0.0](https://github.com/okertanov/Icoon/releases/download/1.0.0/icoon.saver.1.0.0.zip)  
 
 Interesting links to use with Icoon
 -----------------------------------
@@ -48,13 +52,15 @@ Other
 
 TODO:
 -----
- - Donate button
  - Play/Stop on Desktop button
  - Link to site label
  - Post to HN
  - Make the presentation videos and embedd them to GH README.md
- - Make the release zips and link them on GH page
  - To think about sites list and easy selection
  - To disable or implement Refresh UI
 
-https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SWJM4VCFA6DD2&lc=LV&item_name=Oleh%20Kertanov%20%28Icoon%29&item_number=Icoon&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
+Footnotes
+---------
+[Source code](https://github.com/okertanov/Icoon)  
+[Donate link](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SWJM4VCFA6DD2&lc=LV&item_name=Oleh%20Kertanov%20%28Icoon%29&item_number=Icoon&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  
+
