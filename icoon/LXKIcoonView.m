@@ -20,6 +20,16 @@ static NSString* const DefaultsRefreshIntervalKey = @"RefreshInterval";
 static double const DefaultsRefreshInterval = 1.0;
 static NSString* const DefaultsRefreshUnitsKey = @"RefreshUnits";
 static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled;
+static NSString* const DonateURL =
+@"https://www.paypal.com/"
+"cgi-bin/webscr"
+"?cmd=_donations"
+"&business=SWJM4VCFA6DD2"
+"&lc=LV"
+"&item_name=Oleh%20Kertanov%20%28Icoon%29"
+"&item_number=Icoon"
+"&currency_code=EUR"
+"&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted";
 
 //
 // Private Methods
@@ -136,6 +146,11 @@ static unsigned long const DefaultsRefreshUnits = (unsigned long)RefreshDisabled
     _webView = nil;
     _renderer = nil;
     _defaults = nil;
+}
+
+- (IBAction) donateClick:(id)sender {
+    [[NSApplication sharedApplication] endSheet:self.configSheet];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString: DonateURL]];
 }
 
 - (IBAction) okClick:(id)sender {

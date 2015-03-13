@@ -13,6 +13,8 @@
 		76867F891A84BBE500947F02 /* LXKIcoonView.h in Headers */ = {isa = PBXBuildFile; fileRef = 76867F881A84BBE500947F02 /* LXKIcoonView.h */; };
 		76867F8B1A84BBE500947F02 /* LXKIcoonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76867F8A1A84BBE500947F02 /* LXKIcoonView.m */; };
 		76AB43F81A8CFC0D003DD55D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76AB43F61A8CFBCC003DD55D /* WebKit.framework */; };
+		C0A406A61AB3412800C263CD /* btn_donate_SM.gif in Resources */ = {isa = PBXBuildFile; fileRef = C0A406A41AB3412800C263CD /* btn_donate_SM.gif */; };
+		C0A406A71AB3412800C263CD /* btn_donate_SM.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A406A51AB3412800C263CD /* btn_donate_SM.png */; };
 		C0AA41621A864028004F60ED /* LXKPreviewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA41601A864028004F60ED /* LXKPreviewRenderer.m */; };
 		C0AA41631A864028004F60ED /* LXKPreviewRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = C0AA41611A864028004F60ED /* LXKPreviewRenderer.h */; };
 		C0AA416A1A893CA2004F60ED /* LXKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = C0AA41681A893CA2004F60ED /* LXKWebView.h */; };
@@ -29,6 +31,8 @@
 		76867F881A84BBE500947F02 /* LXKIcoonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXKIcoonView.h; sourceTree = "<group>"; };
 		76867F8A1A84BBE500947F02 /* LXKIcoonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXKIcoonView.m; sourceTree = "<group>"; };
 		76AB43F61A8CFBCC003DD55D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		C0A406A41AB3412800C263CD /* btn_donate_SM.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = btn_donate_SM.gif; sourceTree = "<group>"; };
+		C0A406A51AB3412800C263CD /* btn_donate_SM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_donate_SM.png; sourceTree = "<group>"; };
 		C0AA41601A864028004F60ED /* LXKPreviewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXKPreviewRenderer.m; sourceTree = "<group>"; };
 		C0AA41611A864028004F60ED /* LXKPreviewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXKPreviewRenderer.h; sourceTree = "<group>"; };
 		C0AA41681A893CA2004F60ED /* LXKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXKWebView.h; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 		76867F851A84BBE400947F02 /* icoon */ = {
 			isa = PBXGroup;
 			children = (
+				C0A406A31AB3412800C263CD /* Resources */,
 				76D1DC6E1A8A001800445A94 /* ScreenSaver */,
 				76D1DC6D1A8A000500445A94 /* Configuration */,
 				76D1DC6C1A89FFEC00445A94 /* WebView */,
@@ -130,6 +135,15 @@
 				76867F8A1A84BBE500947F02 /* LXKIcoonView.m */,
 			);
 			name = ScreenSaver;
+			sourceTree = "<group>";
+		};
+		C0A406A31AB3412800C263CD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C0A406A41AB3412800C263CD /* btn_donate_SM.gif */,
+				C0A406A51AB3412800C263CD /* btn_donate_SM.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +217,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A406A71AB3412800C263CD /* btn_donate_SM.png in Resources */,
+				C0A406A61AB3412800C263CD /* btn_donate_SM.gif in Resources */,
 				76296FB91A84E8850062966F /* ConfigureSheet.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
