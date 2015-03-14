@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<!--
+    Server side: websocketd --port 1234 tail -f /path/to/file
+    Example:  websocketd --port 1234 tail -f ~/projects/google/chromium/src/out/Release/.ninja_log
+    See https://medium.com/@joewalnes/tail-f-to-the-web-browser-b933d9056cc
+-->
+
+<html>
+
+<head>
+    <style>
+    body {
+        background-color: #0A0A0A;
+    }
+    .log {
+        font-family: monospace;
+        font-size: 20px;
+        font-style: normal;
+        font-variant: normal;
+        color: #A0A0A0;
+    }
+    </style>
+</head>
+
+<body onload="onLoad()">
+
+    <div class="log" id="log-id">
+    </div>
+
+<script>
+function onLoad() {
+    var logDiv = document.querySelector('#log-id');
+
+    var ws = new WebSocket('ws://localhost:1234/');
+    ws.onmessage = function(event) {
+        console.log(event.data);
+
+        var textNode = document.createTextNode(event.data);
+        var innerDiv = document.createElement('div');
+        innerDiv.appendChild(textNode);
+        logDiv.appendChild(innerDiv);
+        window.scrollTo(0, document.body.scrollHeight);
+    };
+}
+</script>
+
+</body>
+
+</html>

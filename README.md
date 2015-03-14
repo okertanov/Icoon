@@ -43,8 +43,18 @@ See also
 [tlrobinson/WebSaver](https://github.com/tlrobinson/WebSaver)  
 [liquidx/webviewscreensaver](https://github.com/liquidx/webviewscreensaver)  
 
-Other
------
+Local html & pipes
+------------------
+### websocketd based, see:
+[https://medium.com/@joewalnes/tail-f-to-the-web-browser-b933d9056cc](https://medium.com/@joewalnes/tail-f-to-the-web-browser-b933d9056cc)
+
+### websocketd server side
+
+    websocketd --port 1234 tail -f ~/projects/google/chromium/src/out/Release/.ninja_log
+
+
+Plugin Architecture
+-------------------
 
     ~/Library/Screen Savers
     .qtz screen savers
@@ -54,10 +64,10 @@ TODO:
 -----
  - Play/Stop on Desktop button
  - Link to site label
- - Post to HN
  - Make the presentation videos and embedd them to GH README.md
  - To think about sites list and easy selection
  - To disable or implement Refresh UI
+ - To add preprocess local html files in comments to prelaunch app or so (for security reason file:// scheme only)
 
 Footnotes
 ---------
