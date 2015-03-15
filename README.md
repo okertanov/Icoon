@@ -68,6 +68,7 @@ TODO:
  - To think about sites list and easy selection
  - To disable or implement Refresh UI
  - To add preprocess local html files in comments to prelaunch app or so (for security reason file:// scheme only)
+ - To add WebPreferences (setWebGLEnabled:YES, etOfflineWebApplicationCacheEnabled:YES)
 
 Footnotes
 ---------
