@@ -8,6 +8,10 @@ Releases
 Interesting links to use with Icoon
 -----------------------------------
 
+### New
+[http://sorting.at/](http://sorting.at/)  
+[http://www.evolutionoftheweb.com/#/evolution/night](http://www.evolutionoftheweb.com/#/evolution/night)  
+
 ### Main and beautiful
 [http://tweetping.net/](http://tweetping.net/)  
 [http://www.google.com/trends/hottrends/visualize](http://www.google.com/trends/hottrends/visualize)  
