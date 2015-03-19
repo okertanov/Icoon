@@ -7,6 +7,13 @@
 //
 
 #import "LXKWebView.h"
+#import "LXKJsScriptingBridge.h"
+
+static NSString* const WebScriptNamespaceName = @"Icoon";
+
+@interface LXKWebView()
+@property (strong, nonatomic) LXKJsScriptingBridge* scriptingBridge;
+@end
 
 @implementation LXKWebView
 
@@ -31,10 +38,13 @@
 }
 
 - (void)dealloc {
+    [self setScriptingBridge:nil];
+    
     [self setFrameLoadDelegate:nil];
     [self setPolicyDelegate:nil];
     [self setUIDelegate:nil];
     [self setEditingDelegate:nil];
+    
     [self close];
 }
 
@@ -47,6 +57,17 @@
 }
 
 #pragma mark Web View Delegates
+
+- (void) webView:(WebView*)webView
+                 didClearWindowObject:(WebScriptObject*)windowScriptObject
+                 forFrame:(WebFrame *)frame {
+    //
+    // Scripting bridge registration
+    //
+    JSContextRef jsContext = [frame globalContext];
+    self.scriptingBridge = [[LXKJsScriptingBridge alloc] initWithContext:jsContext];
+    [windowScriptObject setValue:self.scriptingBridge forKey:WebScriptNamespaceName];
+}
 
 - (void)webView:(WebView *)webView
                 decidePolicyForNewWindowAction:(NSDictionary *)actionInformation

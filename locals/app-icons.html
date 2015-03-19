@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-    Server side: websocketd --port 1234 tail -f /path/to/file
-    Example:  websocketd --port 1234 tail -f ~/projects/google/chromium/src/out/Release/.ninja_log
-    See https://medium.com/@joewalnes/tail-f-to-the-web-browser-b933d9056cc
+    /Applications icons
 -->
 
 <html>
@@ -30,12 +28,16 @@
 
 <script>
 function onLoad() {
-    var ws = new WebSocket('ws://localhost:1234/');
-    ws.onmessage = function(event) {
-        console.log(event.data);
-        display_msg(event.data);
-    };
+    try {
+        var apps = Icoon.applications.module;
+        var dump = JSON.stringify(apps, null, 4);
+        display_msg(dump);
+    }
+    catch(e) {
+        display_msg(e);
+    }
 }
+
 function display_msg(msg) {
     var logDiv = document.querySelector('#log-id');
     var textNode = document.createTextNode(msg);

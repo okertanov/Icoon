@@ -74,6 +74,7 @@ TODO:
  - To add preprocess local html files in comments to prelaunch app or so (for security reason file:// scheme only)
      <!-- @command line with arguments@ -->
  - To add WebPreferences (setWebGLEnabled:YES, etOfflineWebApplicationCacheEnabled:YES)
+ - Installed Application icons animation/sliding
 
 Footnotes
 ---------

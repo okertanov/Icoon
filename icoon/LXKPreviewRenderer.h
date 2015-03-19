@@ -16,7 +16,6 @@
 //
 @interface LXKPreviewRenderer : NSObject<LXKFrameRendererProtocol> {
     @private
-    
     NSView* _renderView;
     NSTextField* _textLabel;
     NSDictionary* _configDict;
