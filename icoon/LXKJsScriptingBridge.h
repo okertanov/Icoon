@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <JavaScriptCore/JSContextRef.h>
 #import "LXKJsScriptingBridgeProtocol.h"
 
 @class JsApplications;
@@ -28,5 +27,7 @@
 
 -(instancetype)initWithContext:(JSContextRef)context;
 -(void)dealloc;
+
+-(JSContextRef)getJsContext;
 
 @end

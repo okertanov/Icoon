@@ -204,6 +204,7 @@
 				76867F7F1A84BBE400947F02 /* Frameworks */,
 				76867F801A84BBE400947F02 /* Headers */,
 				76867F811A84BBE400947F02 /* Resources */,
+				C0507D341ABB46050010B157 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -257,6 +258,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C0507D341ABB46050010B157 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh -e";
+			shellScript = "set -e -u\n\nX_TARGET_INSTALL_DIR=~/Library/Screen\\ Savers\n\necho \"Removing ${FULL_PRODUCT_NAME}\"\nrm -rf \"${X_TARGET_INSTALL_DIR}/${FULL_PRODUCT_NAME}\"\necho \"Copying new build\"\ncp -R \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\" \"${X_TARGET_INSTALL_DIR}/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		76867F7E1A84BBE400947F02 /* Sources */ = {

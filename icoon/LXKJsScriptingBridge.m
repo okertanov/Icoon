@@ -39,6 +39,10 @@
     self.applications = nil;
 }
 
+-(JSContextRef)getJsContext {
+    return jsContext;
+}
+
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)selector {
     return NO;
 }

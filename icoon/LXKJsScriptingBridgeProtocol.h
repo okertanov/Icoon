@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <JavaScriptCore/JavaScript.h>
+#import <JavaScriptCore/JSContextRef.h>
+#import <WebKit/WebScriptObject.h>
 
 @protocol LXKJsScriptingBridgeProtocol <NSObject>
+
+-(JSContextRef)getJsContext;
 
 @end

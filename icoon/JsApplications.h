@@ -19,6 +19,6 @@
 
 @property (strong, nonatomic) NSString* module;
 
--(NSArray*)all;
+-(void)all:(WebScriptObject*)completeCb;
 
 @end

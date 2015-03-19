@@ -29,9 +29,15 @@
 <script>
 function onLoad() {
     try {
-        var apps = Icoon.applications.module;
-        var dump = JSON.stringify(apps, null, 4);
-        display_msg(dump);
+        display_msg(".");
+        display_msg("Starting...");
+        display_msg(Icoon.module);
+        display_msg(Icoon.applications.module);
+        var apps = Icoon.applications.all(function(apps){
+            var dump = JSON.stringify(apps, null, 4);
+            display_msg(dump);
+        });
+        display_msg("Done.");
     }
     catch(e) {
         display_msg(e);

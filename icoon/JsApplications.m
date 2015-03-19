@@ -13,6 +13,8 @@
 @property (strong, atomic) NSMetadataQuery* metadataQuery;
 @property (strong, atomic) dispatch_semaphore_t querySemaphore;
 
+-(void)dispatchResult:(NSArray*)result withContext:(JSContextRef)context forCallback:(WebScriptObject*)callback;
+
 @end
 
 @implementation JsApplications
@@ -73,15 +75,11 @@
     self.querySemaphore = 0;
 }
 
--(NSArray*)all {
-    NSArray* apps = [[NSArray alloc] init];
-    
-    [self startQueryApplications];
-    
-    return apps;
+-(void)all:(WebScriptObject*)completeCb {
+    [self startQueryApplications:[self.scriptingBridge getJsContext] withCallback:completeCb];
 }
 
--(void)startQueryApplications {
+-(void)startQueryApplications:(JSContextRef)context withCallback:(WebScriptObject*)completeCb  {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"kMDItemKind == 'Application'"];
     [self.metadataQuery disableUpdates];
     [self.metadataQuery stopQuery];
@@ -98,20 +96,19 @@
         const int timeoutInSecs = 5;
         dispatch_time_t timeout = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(timeoutInSecs * NSEC_PER_SEC));
         BOOL __unused timedout = dispatch_semaphore_wait(self.querySemaphore, timeout);
-        
-        [self stopQueryApplications];
+        [self stopQueryApplications:context withCallback:completeCb];
     });
 }
 
--(void)stopQueryApplications {
+-(void)stopQueryApplications:(JSContextRef)context withCallback:(WebScriptObject*)completeCb {
     [self.metadataQuery disableUpdates];
     [self.metadataQuery stopQuery];
     
+    NSMutableArray* mapps = [[NSMutableArray alloc] init];
+
     NSUInteger resultCount = [self.metadataQuery resultCount];
     if (resultCount > 0) {
         NSLog(@">>> Found apps: %u", (unsigned int)resultCount);
-        
-        NSMutableArray* mapps = [[NSMutableArray alloc] init];
         
         [self.metadataQuery enumerateResultsUsingBlock:^(id item, NSUInteger idx, BOOL *stop) {
             NSString* __unused displayName = [item valueForAttribute:NSMetadataItemDisplayNameKey];
@@ -120,9 +117,55 @@
             
             //NSLog(@">>> %@ - %@", displayName, path);
         }];
-        
-        // apps = [mapps copy];
     }
+    
+    [self dispatchResult:[mapps copy] withContext:context forCallback:completeCb];
+}
+
+-(void)dispatchResult:(NSArray*)result withContext:(JSContextRef)context forCallback:(WebScriptObject*)callback {
+    if (callback == nil)
+        return;
+    
+    if ([callback isKindOfClass:[WebUndefined class]])
+        return;
+    
+    JSObjectRef cbFn = [callback JSObject];
+    JSValueProtect(context, cbFn);
+    
+    if (!JSObjectIsFunction(context, cbFn))
+        return;
+    
+    JSValueRef jsArgs[] = { [self makeJsArray:result withContext:context] };
+    JSValueRef __unused ret = JSObjectCallAsFunction(context, cbFn, NULL, 1, jsArgs, NULL);
+    
+    JSValueUnprotect(context, cbFn);
+    
+    cbFn = nil;
+}
+
+-(JSValueRef) makeJsArray:(NSArray*)array withContext:(JSContextRef)context{
+    JSValueRef jsArray;
+    
+    NSUInteger i = 0;
+    NSUInteger pcount = [array count];
+    JSValueRef jsArgs[pcount];
+    
+    for (id v in array) {
+        jsArgs[i++] = [self jsStringFromObject:v withContext:context];
+    }
+    jsArray = JSObjectMakeArray(context, pcount, jsArgs, NULL);
+    
+    return jsArray;
+}
+
+-(JSValueRef) jsStringFromObject:(id)object withContext:(JSContextRef)context{
+    JSValueRef jsStr = nil;
+    
+    JSStringRef jstr = JSStringCreateWithUTF8CString([object UTF8String]);
+    jsStr = JSValueMakeString(context, jstr);
+    JSStringRelease(jstr);
+    
+    return jsStr;
 }
 
 -(void)queryDidStartGathering:(NSNotification *)notification {
@@ -153,6 +196,10 @@
 
 +(NSString*)webScriptNameForSelector:(SEL)selector {
     NSString* webScriptSelectorName = NSStringFromSelector(selector);
+    
+    if (selector == @selector(all:)) {
+        return @"all";
+    }
     
     return webScriptSelectorName;
 }
