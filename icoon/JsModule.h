@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "LXKJsScriptingBridgeProtocol.h"
 
-@interface JsObject : NSObject
+@interface JsModule : NSObject {
+    @public
+    NSString* module;
+}
 
+@property (strong, nonatomic) NSString* module;
 @property (weak, nonatomic) id<LXKJsScriptingBridgeProtocol> scriptingBridge;
 
 -(instancetype) __unavailable init; 

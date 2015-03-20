@@ -7,11 +7,13 @@
 //
 
 #import "LXKJsScriptingBridge.h"
+#import "JsSystem.h"
 #import "JsApplications.h"
 
 @implementation LXKJsScriptingBridge
 
 @synthesize module;
+@synthesize system;
 @synthesize applications;
 
 -(instancetype)initWithContext:(JSContextRef)context {
@@ -22,9 +24,10 @@
         JSGlobalContextRetain((JSGlobalContextRef)jsContext);
         
         //
-        // Registration
+        // Exports registration
         //
         self.module = NSStringFromClass([self class]);
+        self.system = [[JsSystem alloc] initWithScriptingBridge:self];
         self.applications = [[JsApplications alloc] initWithScriptingBridge:self];
     }
     
@@ -36,6 +39,7 @@
         JSGlobalContextRelease((JSGlobalContextRef)jsContext);
     }
     
+    self.system = nil;
     self.applications = nil;
 }
 

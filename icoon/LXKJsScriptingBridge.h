@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "LXKJsScriptingBridgeProtocol.h"
 
+@class JsSystem;
 @class JsApplications;
 
 @interface LXKJsScriptingBridge : NSObject<LXKJsScriptingBridgeProtocol> {
@@ -23,6 +24,7 @@
 // Module public JS objects
 //
 @property (strong, nonatomic) NSString* module;
+@property (strong, nonatomic) JsSystem* system;
 @property (strong, nonatomic) JsApplications* applications;
 
 -(instancetype)initWithContext:(JSContextRef)context;

@@ -10,6 +10,8 @@
 		76296FB91A84E8850062966F /* ConfigureSheet.nib in Resources */ = {isa = PBXBuildFile; fileRef = 76296FB81A84E8850062966F /* ConfigureSheet.nib */; };
 		763028091A8CF0B80003C8BF /* LXKWKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 763028071A8CF0B80003C8BF /* LXKWKWebView.h */; };
 		7630280A1A8CF0B80003C8BF /* LXKWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 763028081A8CF0B80003C8BF /* LXKWKWebView.m */; };
+		766E5F0C1ABC0B0200DC3B5B /* JsSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 766E5F0A1ABC0B0200DC3B5B /* JsSystem.h */; };
+		766E5F0D1ABC0B0200DC3B5B /* JsSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 766E5F0B1ABC0B0200DC3B5B /* JsSystem.m */; };
 		76867F891A84BBE500947F02 /* LXKIcoonView.h in Headers */ = {isa = PBXBuildFile; fileRef = 76867F881A84BBE500947F02 /* LXKIcoonView.h */; };
 		76867F8B1A84BBE500947F02 /* LXKIcoonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76867F8A1A84BBE500947F02 /* LXKIcoonView.m */; };
 		76AB43F81A8CFC0D003DD55D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76AB43F61A8CFBCC003DD55D /* WebKit.framework */; };
@@ -17,8 +19,8 @@
 		76ADD46B1ABAA71C00D38F1C /* LXKJsScriptingBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 76ADD4691ABAA71C00D38F1C /* LXKJsScriptingBridge.m */; };
 		76ADD46E1ABAB20300D38F1C /* JsApplications.h in Headers */ = {isa = PBXBuildFile; fileRef = 76ADD46C1ABAB20300D38F1C /* JsApplications.h */; };
 		76ADD46F1ABAB20300D38F1C /* JsApplications.m in Sources */ = {isa = PBXBuildFile; fileRef = 76ADD46D1ABAB20300D38F1C /* JsApplications.m */; };
-		76ADD4721ABB076B00D38F1C /* JsObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 76ADD4701ABB076B00D38F1C /* JsObject.h */; };
-		76ADD4731ABB076B00D38F1C /* JsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 76ADD4711ABB076B00D38F1C /* JsObject.m */; };
+		76ADD4721ABB076B00D38F1C /* JsModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 76ADD4701ABB076B00D38F1C /* JsModule.h */; };
+		76ADD4731ABB076B00D38F1C /* JsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 76ADD4711ABB076B00D38F1C /* JsModule.m */; };
 		76ADD4761ABB116C00D38F1C /* LXKJsScriptingBridgeProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 76ADD4741ABB116C00D38F1C /* LXKJsScriptingBridgeProtocol.h */; };
 		C0A406A61AB3412800C263CD /* btn_donate_SM.gif in Resources */ = {isa = PBXBuildFile; fileRef = C0A406A41AB3412800C263CD /* btn_donate_SM.gif */; };
 		C0A406A71AB3412800C263CD /* btn_donate_SM.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A406A51AB3412800C263CD /* btn_donate_SM.png */; };
@@ -33,6 +35,8 @@
 		763028071A8CF0B80003C8BF /* LXKWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXKWKWebView.h; sourceTree = "<group>"; };
 		763028081A8CF0B80003C8BF /* LXKWKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXKWKWebView.m; sourceTree = "<group>"; };
 		7630DCF31A850D5400AFA119 /* LXKFrameRendererProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXKFrameRendererProtocol.h; sourceTree = "<group>"; };
+		766E5F0A1ABC0B0200DC3B5B /* JsSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsSystem.h; sourceTree = "<group>"; };
+		766E5F0B1ABC0B0200DC3B5B /* JsSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsSystem.m; sourceTree = "<group>"; };
 		76867F831A84BBE400947F02 /* icoon.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = icoon.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		76867F871A84BBE400947F02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76867F881A84BBE500947F02 /* LXKIcoonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXKIcoonView.h; sourceTree = "<group>"; };
@@ -42,8 +46,8 @@
 		76ADD4691ABAA71C00D38F1C /* LXKJsScriptingBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXKJsScriptingBridge.m; sourceTree = "<group>"; };
 		76ADD46C1ABAB20300D38F1C /* JsApplications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsApplications.h; sourceTree = "<group>"; };
 		76ADD46D1ABAB20300D38F1C /* JsApplications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsApplications.m; sourceTree = "<group>"; };
-		76ADD4701ABB076B00D38F1C /* JsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsObject.h; sourceTree = "<group>"; };
-		76ADD4711ABB076B00D38F1C /* JsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsObject.m; sourceTree = "<group>"; };
+		76ADD4701ABB076B00D38F1C /* JsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsModule.h; sourceTree = "<group>"; };
+		76ADD4711ABB076B00D38F1C /* JsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsModule.m; sourceTree = "<group>"; };
 		76ADD4741ABB116C00D38F1C /* LXKJsScriptingBridgeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXKJsScriptingBridgeProtocol.h; sourceTree = "<group>"; };
 		C0A406A41AB3412800C263CD /* btn_donate_SM.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = btn_donate_SM.gif; sourceTree = "<group>"; };
 		C0A406A51AB3412800C263CD /* btn_donate_SM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_donate_SM.png; sourceTree = "<group>"; };
@@ -119,10 +123,12 @@
 				76ADD4741ABB116C00D38F1C /* LXKJsScriptingBridgeProtocol.h */,
 				76ADD4681ABAA71C00D38F1C /* LXKJsScriptingBridge.h */,
 				76ADD4691ABAA71C00D38F1C /* LXKJsScriptingBridge.m */,
-				76ADD4701ABB076B00D38F1C /* JsObject.h */,
-				76ADD4711ABB076B00D38F1C /* JsObject.m */,
+				76ADD4701ABB076B00D38F1C /* JsModule.h */,
+				76ADD4711ABB076B00D38F1C /* JsModule.m */,
 				76ADD46C1ABAB20300D38F1C /* JsApplications.h */,
 				76ADD46D1ABAB20300D38F1C /* JsApplications.m */,
+				766E5F0A1ABC0B0200DC3B5B /* JsSystem.h */,
+				766E5F0B1ABC0B0200DC3B5B /* JsSystem.m */,
 			);
 			name = Scripting;
 			sourceTree = "<group>";
@@ -185,10 +191,11 @@
 				C0AA41631A864028004F60ED /* LXKPreviewRenderer.h in Headers */,
 				76867F891A84BBE500947F02 /* LXKIcoonView.h in Headers */,
 				76ADD4761ABB116C00D38F1C /* LXKJsScriptingBridgeProtocol.h in Headers */,
+				766E5F0C1ABC0B0200DC3B5B /* JsSystem.h in Headers */,
 				763028091A8CF0B80003C8BF /* LXKWKWebView.h in Headers */,
 				C0AA416A1A893CA2004F60ED /* LXKWebView.h in Headers */,
 				76ADD46E1ABAB20300D38F1C /* JsApplications.h in Headers */,
-				76ADD4721ABB076B00D38F1C /* JsObject.h in Headers */,
+				76ADD4721ABB076B00D38F1C /* JsModule.h in Headers */,
 				76ADD46A1ABAA71C00D38F1C /* LXKJsScriptingBridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,7 +293,8 @@
 				7630280A1A8CF0B80003C8BF /* LXKWKWebView.m in Sources */,
 				76ADD46B1ABAA71C00D38F1C /* LXKJsScriptingBridge.m in Sources */,
 				76ADD46F1ABAB20300D38F1C /* JsApplications.m in Sources */,
-				76ADD4731ABB076B00D38F1C /* JsObject.m in Sources */,
+				76ADD4731ABB076B00D38F1C /* JsModule.m in Sources */,
+				766E5F0D1ABC0B0200DC3B5B /* JsSystem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

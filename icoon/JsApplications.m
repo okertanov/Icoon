@@ -19,8 +19,6 @@
 
 @implementation JsApplications
 
-@synthesize module;
-
 -(instancetype)initWithScriptingBridge:(id<LXKJsScriptingBridgeProtocol>)bridge {
     self = [super initWithScriptingBridge:bridge];
     
@@ -132,18 +130,16 @@
     JSObjectRef cbFn = [callback JSObject];
     JSValueProtect(context, cbFn);
     
-    if (!JSObjectIsFunction(context, cbFn))
-        return;
-    
-    JSValueRef jsArgs[] = { [self makeJsArray:result withContext:context] };
-    JSValueRef __unused ret = JSObjectCallAsFunction(context, cbFn, NULL, 1, jsArgs, NULL);
+    if (JSObjectIsFunction(context, cbFn)) {
+        JSValueRef jsArgs[] = { [self makeJsArray:result withContext:context] };
+        JSValueRef __unused ret = JSObjectCallAsFunction(context, cbFn, NULL, 1, jsArgs, NULL);
+    }
     
     JSValueUnprotect(context, cbFn);
-    
     cbFn = nil;
 }
 
--(JSValueRef) makeJsArray:(NSArray*)array withContext:(JSContextRef)context{
+-(JSValueRef) makeJsArray:(NSArray*)array withContext:(JSContextRef)context {
     JSValueRef jsArray;
     
     NSUInteger i = 0;
@@ -158,7 +154,7 @@
     return jsArray;
 }
 
--(JSValueRef) jsStringFromObject:(id)object withContext:(JSContextRef)context{
+-(JSValueRef) jsStringFromObject:(id)object withContext:(JSContextRef)context {
     JSValueRef jsStr = nil;
     
     JSStringRef jstr = JSStringCreateWithUTF8CString([object UTF8String]);
@@ -186,28 +182,20 @@
     dispatch_semaphore_signal(self.querySemaphore);
 }
 
-+(BOOL)isSelectorExcludedFromWebScript:(SEL)selector {
-    return NO;
-}
-
-+(BOOL)isKeyExcludedFromWebScript:(const char*)name {
-    return NO;
-}
-
 +(NSString*)webScriptNameForSelector:(SEL)selector {
-    NSString* webScriptSelectorName = NSStringFromSelector(selector);
+    NSString* __unused webScriptSelectorName = NSStringFromSelector(selector);
     
     if (selector == @selector(all:)) {
         return @"all";
     }
     
-    return webScriptSelectorName;
+    return [super webScriptNameForSelector:selector];
 }
 
 +(NSString *)webScriptNameForKey:(const char *)name {
-    NSString* webScriptKeyName = [NSString stringWithUTF8String:name];
+    NSString* __unused webScriptKeyName = [NSString stringWithUTF8String:name];
     
-    return webScriptKeyName;
+    return [super webScriptNameForKey:name];
 }
 
 @end

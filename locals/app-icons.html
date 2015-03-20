@@ -29,15 +29,27 @@
 <script>
 function onLoad() {
     try {
-        display_msg(".");
-        display_msg("Starting...");
-        display_msg(Icoon.module);
-        display_msg(Icoon.applications.module);
-        var apps = Icoon.applications.all(function(apps){
-            var dump = JSON.stringify(apps, null, 4);
+        display_msg('');
+        display_msg('Starting...');
+        display_msg(Icoon.system.logo + ' ' + Icoon.system.os);
+        display_msg(Icoon.system.username + '@' + Icoon.system.hostname + ' (' + Icoon.system.uptime  + ' days up)');
+        display_msg(Icoon.system.kernel);
+        display_msg('');
+        display_msg('Icoon module: ' + Icoon.module);
+        display_msg('Icoon.system module: ' + Icoon.system.module);
+        display_msg('Icoon.applications module: ' + Icoon.applications.module);
+        display_msg('');
+
+        Icoon.system.execute('/usr/bin/say', ['Hello!'], function(exec) {
+            display_msg('Application executed ' + (exec ? 'ok' : 'failed'));
+        });
+
+        Icoon.applications.all(function(apps) {
+            display_msg('Found ' + apps.length + ' applications. Dupm:');
+            var dump = JSON.stringify(apps);
             display_msg(dump);
         });
-        display_msg("Done.");
+        display_msg('Applications enumeration call completed.');
     }
     catch(e) {
         display_msg(e);
@@ -45,8 +57,9 @@ function onLoad() {
 }
 
 function display_msg(msg) {
+    var nmsg = (!msg || msg.length <= 0) ? '\u00A0' : msg;
     var logDiv = document.querySelector('#log-id');
-    var textNode = document.createTextNode(msg);
+    var textNode = document.createTextNode(nmsg);
     var innerDiv = document.createElement('div');
     innerDiv.appendChild(textNode);
     logDiv.appendChild(innerDiv);

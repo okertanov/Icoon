@@ -7,17 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JsObject.h"
+#import "JsModule.h"
 
 //
-// JsApplications - "/Applications" bridge
+// JsApplications - "/Applications" bridge: Icoon.applications
 //
-@interface JsApplications : JsObject {
-    @public
-    NSString* module;
-}
-
-@property (strong, nonatomic) NSString* module;
+@interface JsApplications : JsModule
 
 -(void)all:(WebScriptObject*)completeCb;
 
