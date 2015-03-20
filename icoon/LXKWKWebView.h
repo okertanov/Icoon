@@ -16,7 +16,7 @@
     WKWebViewConfiguration* _configuration;
 }
 
-- (void)load:(NSString*)url;
-- (void)reload;
+-(void)load:(NSString*)url;
+-(void)reload;
 
 @end

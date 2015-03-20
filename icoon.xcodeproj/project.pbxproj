@@ -22,6 +22,8 @@
 		76ADD4721ABB076B00D38F1C /* JsModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 76ADD4701ABB076B00D38F1C /* JsModule.h */; };
 		76ADD4731ABB076B00D38F1C /* JsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 76ADD4711ABB076B00D38F1C /* JsModule.m */; };
 		76ADD4761ABB116C00D38F1C /* LXKJsScriptingBridgeProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 76ADD4741ABB116C00D38F1C /* LXKJsScriptingBridgeProtocol.h */; };
+		C00D4D781ABC77690062BFB8 /* JsHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C00D4D761ABC77690062BFB8 /* JsHelper.h */; };
+		C00D4D791ABC77690062BFB8 /* JsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C00D4D771ABC77690062BFB8 /* JsHelper.m */; };
 		C0A406A61AB3412800C263CD /* btn_donate_SM.gif in Resources */ = {isa = PBXBuildFile; fileRef = C0A406A41AB3412800C263CD /* btn_donate_SM.gif */; };
 		C0A406A71AB3412800C263CD /* btn_donate_SM.png in Resources */ = {isa = PBXBuildFile; fileRef = C0A406A51AB3412800C263CD /* btn_donate_SM.png */; };
 		C0AA41621A864028004F60ED /* LXKPreviewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AA41601A864028004F60ED /* LXKPreviewRenderer.m */; };
@@ -49,6 +51,8 @@
 		76ADD4701ABB076B00D38F1C /* JsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsModule.h; sourceTree = "<group>"; };
 		76ADD4711ABB076B00D38F1C /* JsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsModule.m; sourceTree = "<group>"; };
 		76ADD4741ABB116C00D38F1C /* LXKJsScriptingBridgeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXKJsScriptingBridgeProtocol.h; sourceTree = "<group>"; };
+		C00D4D761ABC77690062BFB8 /* JsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsHelper.h; sourceTree = "<group>"; };
+		C00D4D771ABC77690062BFB8 /* JsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsHelper.m; sourceTree = "<group>"; };
 		C0A406A41AB3412800C263CD /* btn_donate_SM.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = btn_donate_SM.gif; sourceTree = "<group>"; };
 		C0A406A51AB3412800C263CD /* btn_donate_SM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_donate_SM.png; sourceTree = "<group>"; };
 		C0AA41601A864028004F60ED /* LXKPreviewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXKPreviewRenderer.m; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		76867F851A84BBE400947F02 /* icoon */ = {
 			isa = PBXGroup;
 			children = (
+				C00D4D751ABC771E0062BFB8 /* Utils */,
 				C0A406A31AB3412800C263CD /* Resources */,
 				76D1DC6E1A8A001800445A94 /* ScreenSaver */,
 				76D1DC6D1A8A000500445A94 /* Configuration */,
@@ -172,6 +177,15 @@
 			name = ScreenSaver;
 			sourceTree = "<group>";
 		};
+		C00D4D751ABC771E0062BFB8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C00D4D761ABC77690062BFB8 /* JsHelper.h */,
+				C00D4D771ABC77690062BFB8 /* JsHelper.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		C0A406A31AB3412800C263CD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +205,7 @@
 				C0AA41631A864028004F60ED /* LXKPreviewRenderer.h in Headers */,
 				76867F891A84BBE500947F02 /* LXKIcoonView.h in Headers */,
 				76ADD4761ABB116C00D38F1C /* LXKJsScriptingBridgeProtocol.h in Headers */,
+				C00D4D781ABC77690062BFB8 /* JsHelper.h in Headers */,
 				766E5F0C1ABC0B0200DC3B5B /* JsSystem.h in Headers */,
 				763028091A8CF0B80003C8BF /* LXKWKWebView.h in Headers */,
 				C0AA416A1A893CA2004F60ED /* LXKWebView.h in Headers */,
@@ -287,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C00D4D791ABC77690062BFB8 /* JsHelper.m in Sources */,
 				76867F8B1A84BBE500947F02 /* LXKIcoonView.m in Sources */,
 				C0AA41621A864028004F60ED /* LXKPreviewRenderer.m in Sources */,
 				C0AA416B1A893CA2004F60ED /* LXKWebView.m in Sources */,

@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Oleg Kertanov. All rights reserved.
 //
 
+#import "JsHelper.h"
 #import "JsApplications.h"
 
 @interface JsApplications()
@@ -131,37 +132,12 @@
     JSValueProtect(context, cbFn);
     
     if (JSObjectIsFunction(context, cbFn)) {
-        JSValueRef jsArgs[] = { [self makeJsArray:result withContext:context] };
+        JSValueRef jsArgs[] = { [JsHelper makeJsArray:result withContext:context] };
         JSValueRef __unused ret = JSObjectCallAsFunction(context, cbFn, NULL, 1, jsArgs, NULL);
     }
     
     JSValueUnprotect(context, cbFn);
     cbFn = nil;
-}
-
--(JSValueRef) makeJsArray:(NSArray*)array withContext:(JSContextRef)context {
-    JSValueRef jsArray;
-    
-    NSUInteger i = 0;
-    NSUInteger pcount = [array count];
-    JSValueRef jsArgs[pcount];
-    
-    for (id v in array) {
-        jsArgs[i++] = [self jsStringFromObject:v withContext:context];
-    }
-    jsArray = JSObjectMakeArray(context, pcount, jsArgs, NULL);
-    
-    return jsArray;
-}
-
--(JSValueRef) jsStringFromObject:(id)object withContext:(JSContextRef)context {
-    JSValueRef jsStr = nil;
-    
-    JSStringRef jstr = JSStringCreateWithUTF8CString([object UTF8String]);
-    jsStr = JSValueMakeString(context, jstr);
-    JSStringRelease(jstr);
-    
-    return jsStr;
 }
 
 -(void)queryDidStartGathering:(NSNotification *)notification {

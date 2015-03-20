@@ -72,7 +72,7 @@
     return _renderView;
 }
 
-- (void)notifyChangedConfiguration {
+-(void)notifyChangedConfiguration {
     NSString* configUrl = _configDict != nil ? [_configDict valueForKey:@"Url"] : @"";
     
     if (configUrl != nil && [configUrl length] > 0) {

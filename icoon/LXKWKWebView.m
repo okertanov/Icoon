@@ -10,7 +10,7 @@
 
 @implementation LXKWKWebView
 
-- (instancetype)initWithFrame:(NSRect)frameRect {
+-(instancetype)initWithFrame:(NSRect)frameRect {
     _configuration = [[WKWebViewConfiguration alloc] init];
     
     self = [super initWithFrame:frameRect configuration:_configuration];
@@ -28,17 +28,17 @@
     return self;
 }
 
-- (void)dealloc {
+-(void)dealloc {
     [self stopLoading];
 }
 
-- (void)load:(NSString*)url {
+-(void)load:(NSString*)url {
     NSURL* nsUrl = [NSURL URLWithString:url];
     NSURLRequest* nsRequest = [NSURLRequest requestWithURL:nsUrl];
     [self loadRequest:nsRequest];
 }
 
-- (void)reload {
+-(void)reload {
     [self reload:nil];
 }
 
@@ -47,17 +47,17 @@
 -(void)webView:(WKWebView *)webView didStartProvisionalNavigation: (WKNavigation *)navigation {
 }
 
-- (void)webView:(WKWebView *)webView didFinishNavigation: (WKNavigation *)navigation{
+-(void)webView:(WKWebView *)webView didFinishNavigation: (WKNavigation *)navigation{
 }
 
 -(void)webView:(WKWebView *)webView didFailNavigation: (WKNavigation *)navigation withError:(NSError *)error {
 }
 
-- (BOOL)acceptsFirstResponder {
+-(BOOL)acceptsFirstResponder {
     return NO;
 }
 
-- (BOOL)resignFirstResponder {
+-(BOOL)resignFirstResponder {
     return YES;
 }
 

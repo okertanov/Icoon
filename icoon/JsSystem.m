@@ -7,6 +7,7 @@
 //
 
 #include <sys/utsname.h>
+#import "JsHelper.h"
 #import "JsSystem.h"
 
 @interface JsSystem()
@@ -87,7 +88,7 @@
             complete:(WebScriptObject*)completeCb {
     
     JSContextRef jsContext = [self.scriptingBridge getJsContext];
-    NSArray* __block nsArguments = [self makeNsArray:arguments withContext:jsContext];
+    NSArray* __block nsArguments = [JsHelper makeNsArray:arguments withContext:jsContext];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
         NSLog(@"Launching app %@...", executable);
@@ -133,20 +134,6 @@
     
     JSValueUnprotect(context, cbFn);
     cbFn = nil;
-}
-
--(NSArray*) makeNsArray:(WebScriptObject*)wsObj withContext:(JSContextRef)context {
-    NSMutableArray* nsArray = [[NSMutableArray alloc] init];
-    
-    NSUInteger elementsCount = [[wsObj valueForKey:@"length"] integerValue];
-    for (NSUInteger i = 0; i < elementsCount; i++) {
-        NSString *item = [wsObj webScriptValueAtIndex:(unsigned)i];
-        if ([item isKindOfClass:[NSString class]]) {
-            [nsArray addObject:item];
-        }
-    }
-    
-    return [nsArray copy];
 }
 
 +(NSString*)webScriptNameForSelector:(SEL)selector {

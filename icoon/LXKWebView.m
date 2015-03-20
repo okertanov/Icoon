@@ -17,7 +17,7 @@ static NSString* const WebScriptNamespaceName = @"Icoon";
 
 @implementation LXKWebView
 
-- (instancetype)initWithFrame:(NSRect)frameRect {
+-(instancetype)initWithFrame:(NSRect)frameRect {
     self = [super initWithFrame:frameRect frameName:nil groupName:nil];
     
     if (self) {
@@ -37,7 +37,7 @@ static NSString* const WebScriptNamespaceName = @"Icoon";
     return self;
 }
 
-- (void)dealloc {
+-(void)dealloc {
     [self setScriptingBridge:nil];
     
     [self setFrameLoadDelegate:nil];
@@ -48,17 +48,17 @@ static NSString* const WebScriptNamespaceName = @"Icoon";
     [self close];
 }
 
-- (void)load:(NSString*)url {
+-(void)load:(NSString*)url {
     [self setMainFrameURL:url];
 }
 
-- (void)reload {
+-(void)reload {
     [self reload:nil];
 }
 
 #pragma mark Web View Delegates
 
-- (void) webView:(WebView*)webView
+-(void)webView:(WebView*)webView
                  didClearWindowObject:(WebScriptObject*)windowScriptObject
                  forFrame:(WebFrame *)frame {
     //
@@ -69,7 +69,7 @@ static NSString* const WebScriptNamespaceName = @"Icoon";
     [windowScriptObject setValue:self.scriptingBridge forKey:WebScriptNamespaceName];
 }
 
-- (void)webView:(WebView *)webView
+-(void)webView:(WebView *)webView
                 decidePolicyForNewWindowAction:(NSDictionary *)actionInformation
                 request:(NSURLRequest *)request
                 newFrameName:(NSString *)frameName
@@ -78,48 +78,48 @@ static NSString* const WebScriptNamespaceName = @"Icoon";
     [listener ignore];
 }
 
-- (void)webView:(WebView *)webView didFinishLoadForFrame:(WebFrame *)frame {
+-(void)webView:(WebView *)webView didFinishLoadForFrame:(WebFrame *)frame {
     [self resignFirstResponder];
     [[[self mainFrame] frameView] setAllowsScrolling:NO];
 }
 
-- (NSResponder *)webViewFirstResponder:(WebView *)sender {
+-(NSResponder *)webViewFirstResponder:(WebView *)sender {
     return self;
 }
 
-- (void)webViewClose:(WebView *)sender {
+-(void)webViewClose:(WebView *)sender {
     return;
 }
 
-- (BOOL)webViewIsResizable:(WebView *)sender {
+-(BOOL)webViewIsResizable:(WebView *)sender {
     return NO;
 }
 
-- (BOOL)webViewAreToolbarsVisible:(WebView *)sender {
+-(BOOL)webViewAreToolbarsVisible:(WebView *)sender {
     return NO;
 }
 
-- (BOOL)webViewIsStatusBarVisible:(WebView *)sender {
+-(BOOL)webViewIsStatusBarVisible:(WebView *)sender {
     return NO;
 }
 
-- (void)webViewRunModal:(WebView *)sender {
+-(void)webViewRunModal:(WebView *)sender {
     return;
 }
 
-- (void)webViewShow:(WebView *)sender {
+-(void)webViewShow:(WebView *)sender {
     return;
 }
 
-- (void)webViewUnfocus:(WebView *)sender {
+-(void)webViewUnfocus:(WebView *)sender {
     return;
 }
 
-- (NSView *)hitTest:(NSPoint)aPoint {
+-(NSView *)hitTest:(NSPoint)aPoint {
     return self;
 }
 
-- (void)keyDown:(NSEvent *)theEvent {
+-(void)keyDown:(NSEvent *)theEvent {
     return;
 }
 
@@ -131,7 +131,7 @@ static NSString* const WebScriptNamespaceName = @"Icoon";
     return NO;
 }
 
-- (BOOL)resignFirstResponder {
+-(BOOL)resignFirstResponder {
     return YES;
 }
 

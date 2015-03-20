@@ -47,21 +47,21 @@
     return jsContext;
 }
 
-+ (BOOL)isSelectorExcludedFromWebScript:(SEL)selector {
++(BOOL)isSelectorExcludedFromWebScript:(SEL)selector {
     return NO;
 }
 
-+ (BOOL)isKeyExcludedFromWebScript:(const char*)name {
++(BOOL)isKeyExcludedFromWebScript:(const char*)name {
     return NO;
 }
 
-+ (NSString*)webScriptNameForSelector:(SEL)selector {
++(NSString*)webScriptNameForSelector:(SEL)selector {
     NSString* webScriptSelectorName = NSStringFromSelector(selector);
     
     return webScriptSelectorName;
 }
 
-+ (NSString *)webScriptNameForKey:(const char *)name {
++(NSString *)webScriptNameForKey:(const char *)name {
     NSString* webScriptKeyName = [NSString stringWithUTF8String:name];
     
     return webScriptKeyName;

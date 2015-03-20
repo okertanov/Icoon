@@ -40,7 +40,7 @@ static NSString* const DonateURL =
 
 - (void) updateRefreshIntervalAvailable;
 
-- (ScreenSaverDefaults*) initializeDefaults;
+- (ScreenSaverDefaults*)initializeDefaults;
 - (void)loadDefaults;
 - (void)saveDefaults;
 - (void)notifyChangedDefaults;
@@ -54,7 +54,7 @@ static NSString* const DonateURL =
 @synthesize webView = _webView;
 @synthesize refreshTimer = _refreshTimer;
 
-- (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
+-(instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
     self = [super initWithFrame:frame isPreview:isPreview];
     
     if (self) {
@@ -80,7 +80,7 @@ static NSString* const DonateURL =
     return self;
 }
 
-- (void)startAnimation {
+-(void)startAnimation {
     [super startAnimation];
     
     if (_webView != nil) {
@@ -88,7 +88,7 @@ static NSString* const DonateURL =
     }
 }
 
-- (void)stopAnimation {
+-(void)stopAnimation {
     if (_webView != nil) {
         [_webView load:BlankUrl];
     }
@@ -96,11 +96,11 @@ static NSString* const DonateURL =
     [super stopAnimation];
 }
 
-- (void)drawRect:(NSRect)rect {
+-(void)drawRect:(NSRect)rect {
     [super drawRect:rect];
 }
 
-- (void)animateOneFrame {
+-(void)animateOneFrame {
 }
 
 - (BOOL)isAnimating {
@@ -109,21 +109,21 @@ static NSString* const DonateURL =
     return animating;
 }
 
-- (BOOL)isPreview {
+-(BOOL)isPreview {
     BOOL preview = [super isPreview];
     
     return preview;
 }
 
-+ (BOOL)performGammaFade {
++(BOOL)performGammaFade {
     return YES;
 }
 
-- (BOOL)hasConfigureSheet {
+-(BOOL)hasConfigureSheet {
     return YES;
 }
 
-- (NSWindow*)configureSheet {
+-(NSWindow*)configureSheet {
     if (self.configSheet == nil) {
         #pragma GCC diagnostic push
         #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
@@ -142,49 +142,49 @@ static NSString* const DonateURL =
     return self.configSheet;
 }
 
-- (void)dealloc {
+-(void)dealloc {
     _webView = nil;
     _renderer = nil;
     _defaults = nil;
 }
 
-- (IBAction) donateClick:(id)sender {
+-(IBAction) donateClick:(id)sender {
     [[NSApplication sharedApplication] endSheet:self.configSheet];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString: DonateURL]];
 }
 
-- (IBAction) okClick:(id)sender {
+-(IBAction) okClick:(id)sender {
     [self saveDefaults];
     [self notifyChangedDefaults];
     [[NSApplication sharedApplication] endSheet:self.configSheet];
 }
 
-- (IBAction)popUpClick:(id)sender {
+-(IBAction)popUpClick:(id)sender {
     [self updateRefreshIntervalAvailable];
 }
 
-- (void)keyDown:(NSEvent *)theEvent {
+-(void)keyDown:(NSEvent *)theEvent {
     [self interpretKeyEvents:[NSArray arrayWithObject:theEvent]];
 }
 
-- (void)setFrameSize:(NSSize)newSize {
+-(void)setFrameSize:(NSSize)newSize {
     [super setFrameSize:newSize];
 }
 
-- (BOOL)acceptsFirstResponder {
+-(BOOL)acceptsFirstResponder {
     return NO;
 }
 
-- (BOOL)resignFirstResponder {
+-(BOOL)resignFirstResponder {
     return YES;
 }
 
-- (void) updateRefreshIntervalAvailable {
+-(void) updateRefreshIntervalAvailable {
     [self.refreshIntervalField
      setEnabled:[[self.refreshUnitsPopUp selectedItem] tag] > RefreshDisabled];
 }
 
-- (ScreenSaverDefaults*) initializeDefaults {
+-(ScreenSaverDefaults*) initializeDefaults {
     ScreenSaverDefaults* defaults = [ScreenSaverDefaults defaultsForModuleWithName:ScreenSaverName];
     
     [defaults registerDefaults:
@@ -198,20 +198,20 @@ static NSString* const DonateURL =
     return defaults;
 }
 
-- (void)loadDefaults {
+-(void)loadDefaults {
     _refreshUrl = [_defaults valueForKey: DefaultsURLKey];
     _refreshInterval =[_defaults valueForKey: DefaultsRefreshIntervalKey];
     _refreshUnits = [_defaults valueForKey: DefaultsRefreshUnitsKey];
 }
 
-- (void)saveDefaults {
+-(void)saveDefaults {
     [_defaults setValue:[self.urlField stringValue] forKey:DefaultsURLKey];
     [_defaults setValue:[NSNumber numberWithDouble:[self.refreshIntervalField doubleValue]] forKey:DefaultsRefreshIntervalKey];
     [_defaults setValue:[NSNumber numberWithLong:[[self.refreshUnitsPopUp selectedItem] tag]] forKey:DefaultsRefreshUnitsKey];
     [_defaults synchronize];
 }
 
-- (void)notifyChangedDefaults {
+-(void)notifyChangedDefaults {
     [self loadDefaults];
     [_webView load:_refreshUrl];
     

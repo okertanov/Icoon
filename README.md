@@ -4,6 +4,7 @@ Icoon – OSX Screen Saver with Your Web Page
 Releases
 --------
 [Icoon 1.0.0](https://github.com/okertanov/Icoon/releases/download/1.0.0/icoon.saver.1.0.0.zip)  
+[Icoon 1.1.0](https://github.com/okertanov/Icoon/releases/download/1.1.0/icoon.saver.1.1.0.zip)
 
 Interesting links to use with Icoon
 -----------------------------------
