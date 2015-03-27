@@ -12,6 +12,7 @@ Interesting links to use with Icoon
 ### New
 [http://sorting.at/](http://sorting.at/)  
 [http://www.evolutionoftheweb.com/#/evolution/night](http://www.evolutionoftheweb.com/#/evolution/night)  
+[http://pennystocks.la/stock-market-in-real-time/](http://pennystocks.la/stock-market-in-real-time/)  
 
 ### Main and beautiful
 [http://tweetping.net/](http://tweetping.net/)  
