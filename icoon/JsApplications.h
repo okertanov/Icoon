@@ -16,4 +16,7 @@
 
 -(void)all:(WebScriptObject*)completeCb;
 
+-(void)iconPathFor:(NSString*)appId
+          complete:(WebScriptObject*)completeCb;
+
 @end

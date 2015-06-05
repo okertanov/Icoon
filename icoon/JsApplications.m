@@ -78,6 +78,10 @@
     [self startQueryApplications:[self.scriptingBridge getJsContext] withCallback:completeCb];
 }
 
+-(void)iconPathFor:(NSString*)appId
+          complete:(WebScriptObject*)completeCb {
+}
+
 -(void)startQueryApplications:(JSContextRef)context withCallback:(WebScriptObject*)completeCb  {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"kMDItemKind == 'Application'"];
     [self.metadataQuery disableUpdates];
