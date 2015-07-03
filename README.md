@@ -10,6 +10,7 @@ Interesting links to use with Icoon
 -----------------------------------
 
 ### New
+[http://map.norsecorp.com/](http://map.norsecorp.com/)  
 [http://autopoet.yandex.ru/](http://autopoet.yandex.ru/)  
 [http://sorting.at/](http://sorting.at/)  
 [http://www.evolutionoftheweb.com/#/evolution/night](http://www.evolutionoftheweb.com/#/evolution/night)  
