@@ -10,6 +10,7 @@ Interesting links to use with Icoon
 -----------------------------------
 
 ### New
+[http://stuffin.space/](http://stuffin.space/)  
 [http://wwwnui.akamai.com/gnet/globe/index.html](http://wwwnui.akamai.com/gnet/globe/index.html)  
 [http://map.norsecorp.com/](http://map.norsecorp.com/)  
 [http://autopoet.yandex.ru/](http://autopoet.yandex.ru/)  
