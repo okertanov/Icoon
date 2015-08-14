@@ -48,7 +48,7 @@
         self.logo = @"\uF8FF";
         // uptime
         NSTimeInterval systemUptime = [[NSProcessInfo processInfo] systemUptime];
-        int uptimeDays = abs(systemUptime / (60 * 60 * 24));
+        int uptimeDays = fabs(systemUptime / (60 * 60 * 24));
         self.uptime = [NSString stringWithFormat:@"%d", uptimeDays];
         // hostname
         self.hostname = [[NSProcessInfo processInfo] hostName];
