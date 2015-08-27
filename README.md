@@ -10,6 +10,7 @@ Interesting links to use with Icoon
 -----------------------------------
 
 ### New
+[http://www.yuichiroharai.com/wgl/14_aiueo/](http://www.yuichiroharai.com/wgl/14_aiueo/)  
 [http://stuffin.space/](http://stuffin.space/)  
 [http://wwwnui.akamai.com/gnet/globe/index.html](http://wwwnui.akamai.com/gnet/globe/index.html)  
 [http://map.norsecorp.com/](http://map.norsecorp.com/)  
