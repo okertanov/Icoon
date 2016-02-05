@@ -10,6 +10,7 @@ Interesting links to use with Icoon
 -----------------------------------
 
 ### New
+[http://stars.chromeexperiments.com/](http://stars.chromeexperiments.com/)  
 [https://www.chromeexperiments.com/experiment/the-globe-of-economic-complexity](https://www.chromeexperiments.com/experiment/the-globe-of-economic-complexity)  
 [http://whatcolourisit.scn9a.org/](http://whatcolourisit.scn9a.org/)  
 [http://www.yuichiroharai.com/wgl/14_aiueo/](http://www.yuichiroharai.com/wgl/14_aiueo/)  
