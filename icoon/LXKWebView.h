@@ -8,7 +8,7 @@
 
 #import <WebKit/WebKit.h>
 
-@interface LXKWebView : WebView
+@interface LXKWebView : WebView<WebFrameLoadDelegate, WebPolicyDelegate, WebUIDelegate>
 
 -(void)load:(NSString*)url;
 -(void)reload;
