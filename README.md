@@ -10,6 +10,7 @@ Interesting links to use with Icoon
 -----------------------------------
 
 ### New
+[http://stars.chromeexperiments.com/](http://stars.chromeexperiments.com/)  
 [https://www.mrgnvr.uk/](https://www.mrgnvr.uk/)  
 [http://stars.chromeexperiments.com/](http://stars.chromeexperiments.com/)  
 [https://www.chromeexperiments.com/experiment/the-globe-of-economic-complexity](https://www.chromeexperiments.com/experiment/the-globe-of-economic-complexity)  
