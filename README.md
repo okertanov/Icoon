@@ -10,6 +10,8 @@ Interesting links to use with Icoon
 -----------------------------------
 
 ### New 2016
+http://jozefmaxted.co.uk/petridish/
+http://maevr.vertigomusic.com/
 [http://graphoverflow.com/graphs/3d-periodic-table.html](http://graphoverflow.com/graphs/3d-periodic-table.html)  
 
 ### New 2015
