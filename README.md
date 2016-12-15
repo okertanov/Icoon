@@ -10,6 +10,7 @@ Interesting links to use with Icoon
 -----------------------------------
 
 ### New 2016
+[http://rainbowhunt.club](http://rainbowhunt.club)  
 [https://eyes.nasa.gov/](https://eyes.nasa.gov/)  
 [https://konard.github.io/twittermatrix/messages.html](https://konard.github.io/twittermatrix/messages.html)  
 [https://www.ventusky.com/](https://www.ventusky.com/)  
