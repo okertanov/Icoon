@@ -9,6 +9,9 @@ Releases
 Interesting links to use with Icoon
 -----------------------------------
 
+### New 2017
+[https://blueshift.io/flow-map.html](https://blueshift.io/flow-map.html)  
+
 ### New 2016
 [https://wizgrav.github.io/clubber/index.html](https://wizgrav.github.io/clubber/index.html)  
 [http://radio.garden/](http://radio.garden/)  
