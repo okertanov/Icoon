@@ -10,6 +10,7 @@ Interesting links to use with Icoon
 -----------------------------------
 
 ### New 2017
+[https://www.airtightinteractive.com/demos/ribbons/](https://www.airtightinteractive.com/demos/ribbons/)  
 [https://blueshift.io/flow-map.html](https://blueshift.io/flow-map.html)  
 [http://www.facesofpower.net/#](http://www.facesofpower.net/#)  
 
