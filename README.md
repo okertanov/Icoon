@@ -10,6 +10,7 @@ Interesting links to use with Icoon
 -----------------------------------
 
 ### New 2017
+[https://experiments.withgoogle.com/chrome/the-chaos-game?tag=undefined](https://experiments.withgoogle.com/chrome/the-chaos-game?tag=undefined)  
 [http://toji.github.io/webgl2-particles-2/](http://toji.github.io/webgl2-particles-2/)  
 [https://www.airtightinteractive.com/demos/ribbons/](https://www.airtightinteractive.com/demos/ribbons/)  
 [https://blueshift.io/flow-map.html](https://blueshift.io/flow-map.html)  
