@@ -10,6 +10,7 @@ Interesting links to use with Icoon
 -----------------------------------
 
 ### New 2017
+[https://www.shadertoy.com/view/MdfBRX](https://www.shadertoy.com/view/MdfBRX)  
 [https://experiments.withgoogle.com/chrome/the-chaos-game?tag=undefined](https://experiments.withgoogle.com/chrome/the-chaos-game?tag=undefined)  
 [http://toji.github.io/webgl2-particles-2/](http://toji.github.io/webgl2-particles-2/)  
 [https://www.airtightinteractive.com/demos/ribbons/](https://www.airtightinteractive.com/demos/ribbons/)  
@@ -110,4 +111,3 @@ Footnotes
 ---------
 [Source code](https://github.com/okertanov/Icoon)  
 [Donate link](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SWJM4VCFA6DD2&lc=LV&item_name=Oleh%20Kertanov%20%28Icoon%29&item_number=Icoon&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  
-
