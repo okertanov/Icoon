@@ -49,6 +49,42 @@ body {
   color: #d65c5c;
 }
 
+.slide:nth-child(5) .panel > * {
+  background: #636fee;
+  color: #7594f0;
+}
+
+.slide:nth-child(6) .panel > * {
+  background: #a8cb86;
+  color: #bdd194;
+}
+
+.slide:nth-child(7) .panel > * {
+  background: #63afee;
+  color: #75cdf0;
+}
+
+.slide:nth-child(8) .panel > * {
+  background: #d24b62;
+  color: #d65c5c;
+}
+
+.slide:nth-child(9) .panel > * {
+  background: #636fee;
+  color: #7594f0;
+}
+
+.slide:nth-child(10) .panel > * {
+  background: #a8cb86;
+  color: #bdd194;
+}
+
+.slide:nth-child(11) .panel > * {
+  background: #63afee;
+  color: #75cdf0;
+}
+
+
 .slide .center {
   opacity: 0;
   -webkit-transition: opacity linear 300ms;
