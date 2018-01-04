@@ -22,6 +22,18 @@ let fetchRandomUrbanTerms = function() {
         var jqxhr = $.get('http://api.urbandictionary.com/v0/random')
             .done(function(d) {
                 console.log('Done:', d.list.length);
+                $('.slide').not('.loading').each(function(i, slide) {
+                    console.log('Iterating:', i, slide);
+                    let term = d.list[i];
+                    if (term) {
+                        $(slide).find('.panel .top').html(term.word);
+                        $(slide).find('.panel .top').data('back', term.word);
+                        $(slide).find('.panel .bottom').html(term.word);
+                        $(slide).find('.panel .bottom').data('back', term.word);
+                        $(slide).find('.center h1').html(term.definition);
+                    }
+                });
+                window.setInterval(nextSlide, 10000);
             })
             .fail(function(e) {
                 console.warn('Error:', e);
@@ -34,4 +46,4 @@ let fetchRandomUrbanTerms = function() {
 
 $(document).on('click', nextSlide);
 
-window.setInterval(nextSlide, 10000);
+fetchRandomUrbanTerms();

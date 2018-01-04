@@ -102,7 +102,7 @@ body {
 .slide .top, .slide .bottom {
   content: attr(data-back);
   position: absolute;
-  font-size: 50vh;
+  font-size: 30vh;
   font-weight: 800;
   height: 50vh;
   width: 100vw;
@@ -187,10 +187,10 @@ body {
 }
 
 .center h1 {
-  font-size: 7vh;
+  font-size: 5vh;
   line-height: 1;
   font-family: "BenchNine", sans-serif;
-  opacity: 0.7;
+  opacity: 0.4;
 }
 
 /*
