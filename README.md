@@ -98,6 +98,7 @@ Plugin Architecture
 
 TODO:
 -----
+ - Configurable parameters bridget to JS (may be even static: just 1 string)
  - Play/Stop on Desktop button
  - Link to site label
  - Make the presentation videos and embedd them to GH README.md
