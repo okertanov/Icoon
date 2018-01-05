@@ -31,11 +31,11 @@ var nextSlide = function() {
     recurringTimeoutID = window.setTimeout(nextSlide, nextSlideInterval);
 };
 
-let startAutoSlide = (timeout) => {
+var startAutoSlide = function(timeout) {
     initialTimeoutID = window.setTimeout(nextSlide, timeout);
 };
 
-let fetchRandomUrbanTerms = () => {
+var fetchRandomUrbanTerms = function() {
     const startSlideTimeout = 3000;
 
     var jqxhr = $.get('http://api.urbandictionary.com/v0/random')
@@ -46,7 +46,7 @@ let fetchRandomUrbanTerms = () => {
 
             $('.active + .slide + .loading').removeClass('loading-animation');
             $('.slide').not('.loading').each(function(i, slide) {
-                let term = d.list[i];
+                var term = d.list[i];
                 if (term) {
                     $(slide).find('.panel .top').html(term.word);
                     $(slide).find('.panel .top').data('back', term.word);
@@ -66,7 +66,7 @@ let fetchRandomUrbanTerms = () => {
         });
 };
 
-let performFullReload = () => {
+var performFullReload = function() {
     if (recurringTimeoutID) {
         window.clearTimeout(recurringTimeoutID);
     }
@@ -84,7 +84,7 @@ let performFullReload = () => {
     fetchRandomUrbanTerms();
 };
 
-let saveCurrentTerm = () => {
+var saveCurrentTerm = function() {
     console.log('Saving current term...');
 
     if (!randomUrbanTerms) {
@@ -93,7 +93,7 @@ let saveCurrentTerm = () => {
 
     $('.slide').not('.loading').each(function(i, slide) {
         if ($(slide).hasClass('active')) {
-            let term = randomUrbanTerms[i];
+            var term = randomUrbanTerms[i];
             if (term) {
                 publishToBaaS(term);
             }
@@ -101,7 +101,7 @@ let saveCurrentTerm = () => {
     });
 };
 
-let toggleFreezeCurrentTerm = () => {
+var toggleFreezeCurrentTerm = function() {
     console.log('Freezing/unfreezing current term...');
 
     if (!randomUrbanTerms) {
@@ -120,35 +120,31 @@ let toggleFreezeCurrentTerm = () => {
 const showOverlayTimeout = 2000;
 var hintTimeoutId = undefined;
 
-let hideOverlay = (overlay, timeoutId) => {
-    let visible = $(overlay).is(':visible');
+var hideOverlay = function(overlay, timeoutId) {
+    var visible = $(overlay).is(':visible');
     if (visible) {
-        $(overlay).fadeTo(1000, 0, () => { $(overlay).css('display', 'none'); });
+        $(overlay).fadeTo(1000, 0, function() { $(overlay).css('display', 'none'); });
     }
     if (timeoutId) {
         window.clearTimeout(timeoutId);
     }
 };
 
-let showHintAt = (e) => {
-    // console.log(e);
-
+var showHintAt = function(e) {
     $('#hint-overlay').css({left: event.clientX, top: event.clientY, position:'absolute'});
 
-    let visible = $('#hint-overlay').is(':visible');
+    var visible = $('#hint-overlay').is(':visible');
     if (!visible) {
-        $('#hint-overlay').fadeTo(1000, 0.5, () => { $('#hint-overlay').css('display', 'inline-block'); });
+        $('#hint-overlay').fadeTo(1000, 0.5, function() { $('#hint-overlay').css('display', 'inline-block'); });
     }
     if (hintTimeoutId) {
         window.clearTimeout(hintTimeoutId);
     }
-    hintTimeoutId = window.setTimeout(() => hideOverlay('#hint-overlay', hintTimeoutId), showOverlayTimeout);
+    hintTimeoutId = window.setTimeout(function() { hideOverlay('#hint-overlay', hintTimeoutId); }, showOverlayTimeout);
 };
 
-let keyCommandHandler = (e) => {
-    // console.log(e);
-
-    let key = e.key.toLowerCase();
+var keyCommandHandler = function(e) {
+    var key = e.key.toLowerCase();
     var handled = false;
 
     switch (key) {
@@ -180,7 +176,7 @@ let keyCommandHandler = (e) => {
 
 var pubnub = undefined;
 
-let initBaaS = () => {
+var initBaaS = function() {
     pubnub = new PubNub({
         publishKey: "pub-c-8a217905-fba2-49fb-8172-6d098d2c064c",
         subscribeKey: "sub-c-954f25ae-f22a-11e7-acf8-26f7716e5467",
@@ -228,7 +224,7 @@ let initBaaS = () => {
         }
     });
 
-    pubnub.time((status, response) => {
+    pubnub.time(function(status, response) {
         console.log('PubNub time', status.error, response.timetoken);
     });
 
@@ -240,12 +236,12 @@ let initBaaS = () => {
         count: 1000,
         stringifiedTimeToken: true
     },
-    (status, response) => {
+    function(status, response) {
         console.log('PubNub history', status, response);
     });
 };
 
-let finalizeBaaS = () => {
+var finalizeBaaS = function() {
     if (!pubnub) {
         return;
     }
@@ -259,7 +255,7 @@ let finalizeBaaS = () => {
     pubnub.removeListener(existingListener);
 };
 
-let publishToBaaS = (payload) => {
+var publishToBaaS = function(payload) {
     if (!pubnub) {
         return;
     }
