@@ -115,6 +115,9 @@ body {
   transition: -webkit-transform 600ms cubic-bezier(1, 0.005, 0.57, 0.865);
   transition: transform 600ms cubic-bezier(1, 0.005, 0.57, 0.865);
   transition: transform 600ms cubic-bezier(1, 0.005, 0.57, 0.865), -webkit-transform 600ms cubic-bezier(1, 0.005, 0.57, 0.865);
+
+  text-shadow: #FEFEFE 0px 0px 1px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .slide .top:after, .slide .bottom:after {
