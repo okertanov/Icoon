@@ -9,6 +9,14 @@ body {
   color: white;
   font-size: 2rem;
   cursor: pointer;
+  overflow:hidden;
+}
+
+body {
+    overflow: -moz-scrollbars-none;
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .slider {
