@@ -278,3 +278,21 @@ Custom loading animation
      */
     animation-delay: .4s;
 }
+
+/*
+Hint Overlay
+*/
+
+#hint-overlay {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    background-color: rgba(255, 255, 153, 0.5);
+}
+
+#hint-overlay article {
+    margin: 16px;
+    border: 0px;
+}
