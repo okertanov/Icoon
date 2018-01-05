@@ -8,7 +8,7 @@ var randomUrbanTerms = undefined;
 var initialTimeoutID = undefined;
 var recurringTimeoutID = undefined;
 
-let nextSlide = () => {
+var nextSlide = () => {
     if (recurringTimeoutID) {
         window.clearTimeout(recurringTimeoutID);
         recurringTimeoutID = undefined;
