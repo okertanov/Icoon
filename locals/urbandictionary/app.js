@@ -38,13 +38,13 @@ let startAutoSlide = (timeout) => {
 let fetchRandomUrbanTerms = () => {
     const startSlideTimeout = 3000;
 
-    alert('2');
+    $('body').append('<p>'+ '2' + '</p>');
 
     var jqxhr = $.get('http://api.urbandictionary.com/v0/random')
         .done(function(d) {
             console.log('Done:', d.list.length);
 
-            alert('3');
+            $('body').append('<p>'+ '3' + '</p>');
 
             randomUrbanTerms = d.list;
 
@@ -63,7 +63,7 @@ let fetchRandomUrbanTerms = () => {
         })
         .fail(function(e) {
             console.warn('Error:', e);
-            alert(e);
+            $('body').append('<p>'+ e + '</p>');
         })
         .always(function(p) {
             console.log('Finished:', p);
@@ -71,7 +71,7 @@ let fetchRandomUrbanTerms = () => {
 };
 
 let performFullReload = () => {
-    alert('1');
+    $('body').append('<p>'+ '1' + '</p>');
     if (recurringTimeoutID) {
         window.clearTimeout(recurringTimeoutID);
     }
