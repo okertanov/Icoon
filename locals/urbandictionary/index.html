@@ -5,20 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Urban Dictionary slider: Main</title>
         <link rel="stylesheet" href="style.css">
+        <script>
+            window.onerror = function(error, url, line) {
+                window.alert('Error at ' + line + ' :\n' + error);
+            };
+        </script>
         <script src="jquery-3.2.1.min.js"></script>
         <script src="pubnub.4.20.0.min.js"></script>
         <script src="app.js"></script>
     </head>
     <body class="main">
-        <script>
-        alert('1');
-        </script>
         <div class="slider">
           <!-- 0 -->
           <div class="slide active loading loading-animation">
             <div class="panel">
-              <div class="top" data-back="">Hello!<span>.</span><span>.</span><span>.</span></div>
-              <div class="bottom" data-back="">Hello!<span>.</span><span>.</span><span>.</span></div>
+              <div class="top" data-back="">loading<span>.</span><span>.</span><span>.</span></div>
+              <div class="bottom" data-back="">loading<span>.</span><span>.</span><span>.</span></div>
             </div>
             <div class="center">
               <h1>
