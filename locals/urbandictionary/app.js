@@ -15,8 +15,6 @@ let nextSlide = () => {
     }
 
     if (randomUrbanTerms) {
-        console.log('Active:', $('.active + .slide').length);
-
         if ($('.active + .slide').length > 0) {
             $('.active + .slide').not('.loading').addClass('active');
             $($('.active')[0]).removeClass('active');
@@ -102,6 +100,22 @@ let saveCurrentTerm = () => {
     });
 };
 
+let toggleFreezeCurrentTerm = () => {
+    console.log('Freezing/unfreezing current term...');
+
+    if (!randomUrbanTerms) {
+        return;
+    }
+
+    if (recurringTimeoutID) {
+        window.clearTimeout(recurringTimeoutID);
+        recurringTimeoutID = undefined;
+    }
+    else {
+        recurringTimeoutID = window.setTimeout(nextSlide, nextSlideInterval);
+    }
+};
+
 const showOverlayTimeout = 2000;
 var hintTimeoutId = undefined;
 
@@ -147,6 +161,10 @@ let keyCommandHandler = (e) => {
         break;
         case 's':
             saveCurrentTerm();
+            handled = true;
+        break;
+        case 'p':
+            toggleFreezeCurrentTerm();
             handled = true;
         break;
         default:
