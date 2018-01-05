@@ -4,7 +4,7 @@
 
 var randomUrbanTerms = undefined;
 
-let nextSlide = function() {
+let nextSlide = () => {
   console.log('Active:', $('.active + .slide').length);
 
   if ($('.active + .slide').length > 0) {
@@ -17,11 +17,14 @@ let nextSlide = function() {
   }
 };
 
-let fetchRandomUrbanTerms = function() {
+let fetchRandomUrbanTerms = () => {
+    const startSlideInterval = 3000;
+    const nextSlideInterval = 20000;
     if (!randomUrbanTerms) {
         var jqxhr = $.get('http://api.urbandictionary.com/v0/random')
             .done(function(d) {
                 console.log('Done:', d.list.length);
+                $('.active + .slide + .loading').removeClass('loading-animation');
                 $('.slide').not('.loading').each(function(i, slide) {
                     console.log('Iterating:', i, slide);
                     let term = d.list[i];
@@ -33,7 +36,7 @@ let fetchRandomUrbanTerms = function() {
                         $(slide).find('.center h1').html(term.definition);
                     }
                 });
-                window.setInterval(nextSlide, 10000);
+                window.setTimeout(() => { nextSlide() && window.setInterval(nextSlide, nextSlideInterval); }, startSlideInterval);
             })
             .fail(function(e) {
                 console.warn('Error:', e);
