@@ -36,7 +36,7 @@ let fetchRandomUrbanTerms = () => {
                         $(slide).find('.center h1').html(term.definition);
                     }
                 });
-                window.setTimeout(() => { nextSlide() && window.setInterval(nextSlide, nextSlideInterval); }, startSlideInterval);
+                window.setTimeout(() => { nextSlide(); window.setInterval(nextSlide, nextSlideInterval); }, startSlideInterval);
             })
             .fail(function(e) {
                 console.warn('Error:', e);
