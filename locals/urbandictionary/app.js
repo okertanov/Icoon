@@ -59,6 +59,7 @@ let fetchRandomUrbanTerms = () => {
         })
         .fail(function(e) {
             console.warn('Error:', e);
+            alert(e);
         })
         .always(function(p) {
             console.log('Finished:', p);
