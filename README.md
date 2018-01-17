@@ -9,7 +9,10 @@ Releases
 Interesting links to use with Icoon
 -----------------------------------
 
-### New 2017
+### 2018
+[https://hackertyper.net/](https://hackertyper.net/)  
+
+### 2017
 [https://github.com/liquidx/webviewscreensaver](https://github.com/liquidx/webviewscreensaver)  
 [https://www.shadertoy.com/view/MdfBRX](https://www.shadertoy.com/view/MdfBRX)  
 [https://experiments.withgoogle.com/chrome/the-chaos-game?tag=undefined](https://experiments.withgoogle.com/chrome/the-chaos-game?tag=undefined)  
