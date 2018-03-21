@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--
+    wget -O- http://a1.phobos.apple.com/us/r1000/000/Features/atv/AutumnResources/videos/entries.json | jq '.[].assets[].url' | xargs wget -nc
+    -->
+    <meta charset="utf-8">
+    <title>The HTML5 Herald</title>
+    <style>
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        :-webkit-full-screen #myvideo {
+          width: 100%;
+          height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<video autoplay muted loop id="myVideo">
+  <source src="comp_DB_D001_C005_t9_6M_HB_tag0.mov" type="video/mp4">
+</video>
+</body>
+</html>
